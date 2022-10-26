@@ -10,7 +10,11 @@ To tackle this problem, in this article, we introduce AdvisIL, a method which ta
 AdvisIL makes class-incremental learning easier, since users do not need to run cumbersome experiments to design their system.  
 We evaluate our method on four datasets under six incremental settings and three deep model sizes. We compare six algorithms and three deep neural architectures. Results show that AdvisIL has better overall performance than any of the individual combinations of a learning algorithm and a neural architecture.
 
-![alt text](relative/path/to/advisIL_principle.png?raw=true "AdvisIL's principle")
+<img
+  src="captions/advisIL_principle.png"
+  alt="Alt text"
+  title="AdvisIL's principle"
+  style="display: inline-block; margin: 0 auto; max-width: 400px">
 
 **How to cite :** 
 Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "AdvisIL - A Class-Incremental Learning Advisor", _Winter Conference on Applications of Computer Vision_, January 2023, Waikoloa, USA. 
