@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Tests on the cluster
+*.sh
+*.log
+
 # Distribution / packaging
 .Python
 build/
