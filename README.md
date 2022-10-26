@@ -33,7 +33,7 @@ _____
 * siw
 * SPBM : TODO modif learning rate cf Slack
 
-* add a requirements file --> py37 env
+* add a requirements file --> py37 env OK
 * image_list_files > train100
 
 à terme
