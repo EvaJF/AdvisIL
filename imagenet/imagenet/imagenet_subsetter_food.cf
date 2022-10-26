@@ -1,0 +1,12 @@
+[imagenet_subsetter.py]
+################################ input
+input_path = /home/users/efeillet/expe/imagenet/food_over_600.txt  
+path_to_tars = /home/data/dataset/ImageNet/tars  
+################################ output
+images_list_files_path = /home/users/efeillet/images_list_files/train100/imagenet_food/  
+root_image_dir = /home/data/efeillet/imagenet_food/  
+################################ dataset
+num_classes = 100 
+num_train = 340 
+num_test = 60 
+seed = 95

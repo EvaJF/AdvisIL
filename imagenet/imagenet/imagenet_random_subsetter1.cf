@@ -1,0 +1,12 @@
+[imagenet_random_subsetter.py]
+################################ input
+input_path = /home/users/efeillet/expe/imagenet/random_classes_1.txt  
+path_to_tars = /home/data/dataset/ImageNet/tars  
+################################ output
+images_list_files_path = /home/users/efeillet/images_list_files/train100/imagenet_random_1/  
+root_image_dir = /home/data/efeillet/imagenet_random_1/  
+################################ dataset
+num_classes = 100 
+num_train = 340 
+num_test = 60 
+seed = 95
