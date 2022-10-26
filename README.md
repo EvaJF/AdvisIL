@@ -70,11 +70,17 @@ To use this environment :
 
 ### 1. Get the datasets
 
-1. ImageNet subsets : 
+__a) ImageNet subsets__
+
+We consider six datasets which are sampled from ImageNet. The three datasets are thematic, and were
+obtained by sampling leaf ImageNet classes which belong to the “food”, “fauna”, and “flora” sub-hierarchies, respectively.
+The three other datasets were obtained by randomly sampling classes from ImageNet. 
+Each dataset contains 100 classes, with 340 images per class for training, and 60 images for testing. 
+Each sampled class is only used in one dataset.
 
 **Prerequisite** : access to ImageNet 21K full database.
 
-For each subset, run the following commands to get the images in a dedicated folder, and to compute the mean and standard deviation of the colour channels.  
+For each ImageNet subset, run the following commands to (1) get the images in a dedicated folder, and (2) compute the mean and standard deviation of the colour channels.  
 
 * RANDOM0 subset
 
@@ -112,23 +118,37 @@ For each subset, run the following commands to get the images in a dedicated fol
 
 > python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_food/train.lst 
 
-Sanity check : you must obtain the same means and standard deviations as in `./images_list_files/datasets_mean_std.txt` . 
+__Sanity check__ 
+
+You must obtain the same mean and standard deviation values as in [`datasets_mean_std.txt`](./images_list_files/datasets_mean_std.txt) . 
 
 **Optional** : To create your own ImageNet subset, see the dedicated [tutorial](./imagenet/tutorial.md).
 
 
-2. Other datasets
+ __b) Other datasets__
 
-Quelle version ? inclure lien téléchargement
+Please download the following datasets : 
 
-* Food101
-* Google Landmarks
-* iNaturalist
+* [Food101](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/)
+* [Google Landmarks v2](https://github.com/cvdfoundation/google-landmark)
+* [iNaturalist](https://github.com/visipedia/inat_comp/tree/master/2017)
 
+Note that in the case of iNaturalist, you do not need to download the data related to the semantic segmentation task of the original competition. 
 
-### Test runs on reference datasets /EXPE/
+__c) Note on reproductibility__ 
 
-See launchers in /home/users/efeillet/expe/AdvisIL/ref.
+To facilitate reproductibility, we provide in the `images_list_files` folder the _explicit list of images_ contained in each of the datasets we used. These lists are fed to the dataloaders when training or testing models.
+
+For example, under [images_list_files/food101/train.lst](./images_list_files/food101/train.lst) you find the list of training images for the Food101 dataset. 
+
+The file is structured as follows : 
+* The first line of the text file contains the root path to your local version of the dataset, and "-1" is used as flag for this root path. _Please change the root path to your own._
+> /home/data/efeillet/food101/images -1
+* All other lines are in the format "<class_name>/<image_name> <class_number>". See example below. 
+> apple_pie/1005649.jpg 87
+
+Note that this list actually contains more data than we actually used : in our experiments we only consider the first 100 classes of Food101, leaving out the last one. But we provide a complete split for the 101 classes in case you wish to use them all. 
+
 
 
 ### Architecture exploration
@@ -208,6 +228,11 @@ Plot average incremental accuracy
 
 
 ### Running Incremental Learning Methods
+
+### Test runs on reference datasets /EXPE/
+
+See launchers in /home/users/efeillet/expe/AdvisIL/ref.
+
 
 #### DeeSIL --> see dedicated repo
 
