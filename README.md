@@ -14,7 +14,7 @@ We evaluate our method on four datasets under six incremental settings and three
   src="captions/advisIL_principle.png"
   alt="Alt text"
   title="AdvisIL's principle"
-  style="display: inline-block; margin: 0 auto; max-width: 400px">
+  style="display: inline-block; margin: 0 auto; max-width: 250px">
 
 **How to cite :** 
 Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "AdvisIL - A Class-Incremental Learning Advisor", _Winter Conference on Applications of Computer Vision_, January 2023, Waikoloa, USA. 
