@@ -114,7 +114,7 @@ For each subset, run the following commands to get the images in a dedicated fol
 
 Sanity check : you must obtain the same means and standard deviations as in `./images_list_files/datasets_mean_std.txt` . 
 
-**Optional** : Create your own ImageNet subset : see dedicated [tutorial](./imagenet/tutorial.md).
+**Optional** : To create your own ImageNet subset, see the dedicated [tutorial](./imagenet/tutorial.md).
 
 
 2. Other datasets
