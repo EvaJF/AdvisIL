@@ -153,15 +153,18 @@ Note that this list actually contains more data than we actually used : in our e
 
 ### Architecture exploration
 
-> python scaler.py
+We have made preliminary experiments to study the impact of architecture on the incremental performance of small convolutional neural networks. Therefore we have implemented a more flexible version of ResNet, MobileNetv2 and ShuffleNetv2 which allow to scale the architecture according to its width (number of convolutional filters) and depth (number of building blocks). These custom architectures are implemented [here](./models/).
 
-or
+To explore the architectures, run the following script. You will see the number of parameters corresponding to various scaling operations on 3 network types (ResNet18 with BasicBlocks, Mobilenetv2 and ShuffleNetv2).
 
-> sbatch /home/users/efeillet/expe/misc/launcher.sh
+> python /AdvisIL/models/scaler.pyscaler.py
+
 
 ### Hyperparameter tuning 
 
-NB : You need to download ray-tune.
+Before running experiments, we search for suitable hyperparameters for each neural architecture. 
+
+__Prerequisite__ : We use ray-tune to perform hyperparameter tuning. 
 
 > pip install -U "ray[tune]"  # installs Ray + dependencies for Ray Tune
 
@@ -169,7 +172,7 @@ Test the code
 
 > sbatch /home/users/efeillet/incremental-scaler/hp_tuning/launsher_hp_tuner.sh 
 
-Specific backbones
+Hyperparameter tuning for specific backbones
 
 > python /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner.py /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner_mobilenet.cf
 
@@ -181,7 +184,7 @@ More hyperparameter tuning experiments
 
 > sbatch /home/users/efeillet/expe/AdvisIL/hp_tuning/launsher_hp_tuner_1.sh
 
-Similarily, launch launsher_hp_tuner_2.sh and launsher_hp_tuner_3.sh.
+Similarily, launch `launsher_hp_tuner_2.sh` and `launsher_hp_tuner_3.sh`.
 
 Collect & Analyse results
 
@@ -190,7 +193,7 @@ Collect & Analyse results
 
 ### Scaling experiments
 
-NB : here we use LUCIR for scaling experiments. Similar guidelines apply for other methods.
+We have run scaling experiments to propose our scaling heuristic in the case of a class-incremental learning task. In the following scripts, we use LUCIR algorithm for scaling experiments. Similar guidelines apply for other methods. See below for more details on each incremental learning algorithm.
 
 1. Define settings --> output yaml files
 
