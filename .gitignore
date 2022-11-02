@@ -9,6 +9,8 @@ __pycache__/
 # Tests on the cluster
 *.sh
 *.log
+# Folder for test logs 
+./test
 
 # Distribution / packaging
 .Python
