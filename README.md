@@ -72,13 +72,13 @@ To use this environment :
 
 __a) ImageNet subsets__
 
-We consider six datasets which are sampled from ImageNet. The three datasets are thematic, and were
+We consider six datasets which are sampled from the full ImageNet-21k database. The three datasets are thematic, and were
 obtained by sampling leaf ImageNet classes which belong to the “food”, “fauna”, and “flora” sub-hierarchies, respectively.
 The three other datasets were obtained by randomly sampling classes from ImageNet. 
 Each dataset contains 100 classes, with 340 images per class for training, and 60 images for testing. 
 Each sampled class is only used in one dataset.
 
-**Prerequisite** : access to ImageNet 21K full database.
+**Prerequisite** : access to [ImageNet-21K full database](https://www.image-net.org/).
 
 For each ImageNet subset, run the following commands to (1) get the images in a dedicated folder, and (2) compute the mean and standard deviation of the colour channels.  
 
@@ -131,7 +131,7 @@ Please download the following datasets :
 
 * [Food101](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/)
 * [Google Landmarks v2](https://github.com/cvdfoundation/google-landmark)
-* [iNaturalist](https://github.com/visipedia/inat_comp/tree/master/2017)
+* [iNaturalist 2018](https://github.com/visipedia/inat_comp/tree/master/2018)
 
 Note that in the case of iNaturalist, you do not need to download the data related to the semantic segmentation task of the original competition. 
 
