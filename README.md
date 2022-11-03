@@ -224,22 +224,17 @@ TO DO CHANGE PATHS and provide launcher file in sclaing subfolder
 
 _Again, pay attention to the name of your output files so that you do not erase previous files incidentally by running the script on different data but with the same output name._
 
-Running the following command, parse the log files. 
+For reference, we provide log files with accuracies and visualisations [here](./scaling/logs/). 
+
+Running the following command, parse the log files. You obtain a `.csv` file containing the average incremental accuracy of each experiment.
 
 > python /home/users/efeillet/incremental-scaler/scaling/log_parser.py /home/users/efeillet/incremental-scaler/scaling/log_parser.cf
 
-Finally, plot the average incremental accuracy for each architecture.
+Finally, plot the average incremental accuracy for each architecture (one plot per backbone). 
 
-> python /home/users/efeillet/incremental-scaler/scaling/RFIAP_plots.py
+> python AdvisIL/scaling/WACV_scaling_plots.py
 
-
-NB : If you wish to see the initial state only, run the following commands.
-
-> python /home/users/efeillet/incremental-scaler/scaling/log_parser_init.py /home/users/efeillet/incremental-scaler/scaling/log_parser_init.cf
-
-> python /home/users/efeillet/incremental-scaler/scaling/RFIAP_plots_init.py
-
-TODO chemins ! 
+TODO modifier chemins ! 
 
 ### Running Incremental Learning Methods
 
