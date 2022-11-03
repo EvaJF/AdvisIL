@@ -23,40 +23,38 @@ _____
 
 **Content of this repository**
 
-TODO in config files : root --> /AdvisIL/...
-
-
+Subfolders
 * AdvisIL TODO changer nom --> configs_utils
 * build_datasets : copier dossier clean local, comment obtenir les splits ImageNet + fournir les listes de fichiers dans un autre dossier image_list_files OK
 * ajouter image_list_files/train100 + ma version locale pour les subsets imagenet OK
 * deesil : vérifier contenu, lister les choses à conserver ou pas
-* hp_tuning
+* hp_tuning OK
 * LUCIR
-* LwF : ne pas conserver
 * MobIL : maj ? --> pointer vers nouveau repo FeTrIL
 * parsing : ?
 * reco : modifier avec code Adrian
-* scaling : ?
+* scaling : OK
 * siw
 * SPBM : TODO modif learning rate cf Slack
 
-* add a requirements file --> py37 env OK
-* image_list_files > train100
 
 à terme
-* model_utils et code backbones --> créer un dossier models
+
+* add a requirements file --> py37 env OK
+* image_list_files > train100 OK
+* model_utils et code backbones --> créer un dossier models OK
 * DSLDA : à rajouter
-* virer fichiers scaler, scaling et tutorial.
-* modifier tous les noms de chemins
+* virer fichiers scaler, scaling et tutorial. OK
+* modifier tous les noms de chemins, e.g. in config files : root --> /AdvisIL/...
 * traquer les éléments hard codés, mettre en paramètres les chemins et autres noms.
-* captions folder --> image principe advisil
+* captions folder --> image principe advisil OK
 
 _____
 
 
 ## Tutorial 
 
-### 0. Requirements
+### 0. Check the requirements
 
 We use Python deep learning framework PyTorch (`Python version 3.7`, `torch version 1.7.1+cu110`) in association with cuda (`CUDA Version: 11.4`).
 
@@ -154,7 +152,7 @@ Note that this list actually contains more data than we actually used : in our e
 
 
 
-### Architecture exploration
+### 2. Explore neural architectures
 
 We have made preliminary experiments to study the impact of architecture on the incremental performance of small convolutional neural networks. Therefore we have implemented a more flexible version of ResNet, MobileNetv2 and ShuffleNetv2 which allow to scale the architecture according to its width (number of convolutional filters) and depth (number of building blocks). These custom architectures are implemented [here](./models/).
 
@@ -163,7 +161,7 @@ To explore the architectures, run the following script. You will see the number 
 > python /AdvisIL/models/scaler.py
 
 
-### Hyperparameter tuning 
+### 3. Tune your hyperparameters 
 
 Before running the main experiments, we search for suitable hyperparameters for each neural architecture. 
 
@@ -196,7 +194,7 @@ This last step allows you to collect and analyse results.  A TRANSFORMER en NOTE
 > python /home/users/efeillet/incremental-scaler/hp_tuning/tuning_analyser.py
 
 
-### Scaling experiments
+### 4. Take a look at our scaling experiments
 
 We have run scaling experiments to propose a scaling heuristic in the case of a class-incremental learning task. In the following scripts, we perform scaling experiments using the LUCIR algorithm and the ??? dataset. Similar guidelines apply for other methods and datasets (see below for more details on each incremental learning algorithm). Similar observations apply too.
 
@@ -236,43 +234,67 @@ Finally, plot the average incremental accuracy for each architecture (one plot p
 
 TODO modifier chemins ! 
 
-### Running Incremental Learning Methods
+### 5. Get familiar with a few incremental learning algorithms 
 
-### Test runs on reference datasets /EXPE/ --> reproducing performance on reference datasets. 
+In our article, we report experiments with six examplar-free class-incremental learning algorithms : LUCIR, SPB-M, DeepSLDA, SIW, DeeSIL and FeTrIL.
 
-See launchers in /home/users/efeillet/expe/AdvisIL/ref.
+In this repository, we share implementations of these algorithms that, when needed, we adapted, so that they are able to handle : 
+- custom datasets (e.g. not just ImageNet-1k and CIFAR100)
+- custom neural architectures (e.g. not just ResNet18 and ResNet32)
+- custom incremental learning scenarios (e.g. not only scenarios with an equal repartition of classes across all incremental states, but also scenarios with more classes in the initial state). 
 
+#### a. LUCIR 
 
-#### DeeSIL --> see dedicated repo
+Our implementation is based on this [original repository](https://github.com/hshustc/CVPR19_Incremental_Learning). LUCIR has initially been proposed as a
+learning algorithm with memory of past examples. In practice, as we focus on examplar-free class-incremental learning, we set the size of LUCIR’s memory buffer to zero.
 
-#### DSLDA 
-
-#### LUCIR & SPB-M
+Example code for launching LUCIR.
 
 > python /home/users/efeillet/incremental-scaler/LUCIR/codes/main.py /home/users/efeillet/incremental-scaler/LUCIR/configs/LUCIR.cf
 
-> python /home/users/efeillet/incremental-scaler/SPBM/codes/main.py /home/users/efeillet/incremental-scaler/SPBM/configs/LUCIR.cf
+_Useful tip: For convenience, we reuse the first state obtained by running LUCIR for experiments which use a fixed feature extractor, namely DeepSLDA, SIW, DeeSIL and FeTrIL._ 
 
+#### b. SPB-M
 
-#### SIW
+We use the SPB-M version, which uses a data augmentation procedure based on image rotations. As no official code with released for this method, we based our implementation on LUCIR’s implementation, with a modified loss function and SPB-M’s data augmentation procedure. Unfortunately, our implementation does not reac the same accuracy as in the original paper. Contributions are welcome to improve this. 
 
-First batch
+Example code for launching SPB-M.
+
+> python /home/users/efeillet/incremental-scaler/SPBM/codes/main.py /home/users/efeillet/incremental-scaler/SPBM/configs/???.cf
+
+#### c. DeepSLDA 
+
+Our implementation is based on the [original repository](https://github.com/tyler-hayes/Deep_SLDA) of Tayler Hayes.
+
+#### d. SIW
+
+Our implementation is based on the [original repository](https://github.com/EdenBelouadah/class-incremental-learning/tree/master/siw) of Eden Belouadah.
+
+i - First batch
 > python /home/users/efeillet/incremental-scaler/siw/FT/codes/scratch.py /home/users/efeillet/incremental-scaler/siw/FT/configs/scratch.cf
 
-Fine-tuning without memory
+ii - Fine-tuning without memory
 > python /home/users/efeillet/incremental-scaler/siw/FT/codes/no_mem_ft.py /home/users/efeillet/incremental-scaler/siw/FT/configs/no_mem_ft.cf
 
-Feature extraction
+iii - Feature extraction
 > python /home/users/efeillet/incremental-scaler/siw/FT/codes/features_extraction.py /home/users/efeillet/incremental-scaler/siw/FT/configs/features_extraction.cf
 
-Weight correction using standardization of initial weights
+iv - Weight correction using standardization of initial weights
 > python /home/users/efeillet/incremental-scaler/siw/FT/codes/inFT_siw.py /home/users/efeillet/incremental-scaler/siw/FT/configs/inFT_siw.cf
 
+#### e. DeeSIL 
+
+Our implementation is based on this [original repository](https://github.com/EdenBelouadah/class-incremental-learning/tree/master/deesil).
+
+See our [dedicated repository](https://github.com/GregoirePetit/DeeSIL).
+
+#### f. FeTrIL
+
+Our implementation of FeTrIL is shared [here](https://github.com/GregoirePetit/FeTrIL).
 
 
 
-
-### Computing AdvisIL reference experiments using reference scenarios
+### 6. Compute reference experiments for AdvisIL using reference scenarios
 
 1. Generate yaml files with your hyperparameters for each backbone type
 
@@ -308,9 +330,32 @@ A typical arborescence is the following : TO ADD (screenshot ?)
 
 4. Parse log files and save results in a structured format
 
-#### Computing AdvisIL recommendations for reference scenarios
 
-#### Computing AdvisIL recommendations for test scenarios
+### 7. Compute recommendations for reference scenarios using AdvisIL
 
+TO ADD : csv with parsed results for ref and test. 
+TO ADD : code with ranking reco. 
 
-### Visualizations
+### 8. Compute recommendations for test scenarios using AdvisIL 
+
+Do the same thing for test experiments. 
+
+### 9. Analyze your results
+
+Last but not least, plot a few visualizations
+
+see if necessary/easy.
+
+### 10. Wrapping up
+
+In this repository, we provide a detailed tutorial to :
+- reproduce our results
+- contribute with your own results.
+
+TODO rappeler les avantages d'AdvsIL.
+As AdvisIL is thought as a collaborative tool, don't hesitate to contribute to this repository by :
+- reporting issues
+- adding algorithms, backbones and datasets
+- adding experimental results.
+
+Thanks for your contribution !
