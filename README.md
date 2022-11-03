@@ -239,7 +239,7 @@ NB : If you wish to see the initial state only, run the following commands.
 
 > python /home/users/efeillet/incremental-scaler/scaling/RFIAP_plots_init.py
 
-
+TODO chemins ! 
 
 ### Running Incremental Learning Methods
 
