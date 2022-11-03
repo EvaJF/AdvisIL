@@ -1,0 +1,20 @@
+[hp_tuner.py]
+####################### network
+backbone = shufflenet
+width_mult = 1.6
+depth_mult = 0.1 
+####################### tuning
+num_samples = 25 
+####################### dataset 
+normalization_dataset_name = imagenet_fauna
+datasets_mean_std_file_path = /home/users/efeillet/images_list_files/datasets_mean_std.txt
+train_file_path = /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst
+test_file_path = /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst
+num_classes = 20 
+####################### training & test
+test_batch_size = 512
+num_workers = 8
+epochs = 70 
+####################### save
+save_dir = /home/users/efeillet/expe/AdvisIL/hp_tuning
+

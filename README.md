@@ -23,9 +23,12 @@ _____
 
 **Content of this repository**
 
+TODO in config files : root --> /AdvisIL/...
+
+
 * AdvisIL TODO changer nom --> configs_utils
-* build_datasets : copier dossier clean local, comment obtenir les splits ImageNet + fournir les listes de fichiers dans un autre dossier image_list_files
-* ajouter image_list_files/train100 + ma version locale pour les subsets imagenet
+* build_datasets : copier dossier clean local, comment obtenir les splits ImageNet + fournir les listes de fichiers dans un autre dossier image_list_files OK
+* ajouter image_list_files/train100 + ma version locale pour les subsets imagenet OK
 * deesil : vérifier contenu, lister les choses à conserver ou pas
 * hp_tuning
 * LUCIR
@@ -157,22 +160,22 @@ We have made preliminary experiments to study the impact of architecture on the 
 
 To explore the architectures, run the following script. You will see the number of parameters corresponding to various scaling operations on 3 network types (ResNet18 with BasicBlocks, Mobilenetv2 and ShuffleNetv2).
 
-> python /AdvisIL/models/scaler.pyscaler.py
+> python /AdvisIL/models/scaler.py
 
 
 ### Hyperparameter tuning 
 
-Before running experiments, we search for suitable hyperparameters for each neural architecture. 
+Before running the main experiments, we search for suitable hyperparameters for each neural architecture. 
 
-__Prerequisite__ : We use ray-tune to perform hyperparameter tuning. 
+__Prerequisite__ : We use ray-tune to perform hyperparameter tuning. The following command installs Ray and dependencies for Ray Tune.
 
-> pip install -U "ray[tune]"  # installs Ray + dependencies for Ray Tune
+> pip install -U "ray[tune]"  
 
-Test the code
+To test your configuration, run this minimum working example with just 2 epochs.
 
 > sbatch /home/users/efeillet/incremental-scaler/hp_tuning/launsher_hp_tuner.sh 
 
-Hyperparameter tuning for specific backbones
+Tou can now perform a hyperparameter search for each backbone. We provide an example configuration file for each backbone.
 
 > python /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner.py /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner_mobilenet.cf
 
@@ -180,13 +183,15 @@ Hyperparameter tuning for specific backbones
 
 > python /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner.py /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner_shufflenet.cf
 
-More hyperparameter tuning experiments
+Feel free to run more hyperparameter tuning experiments with other datasets. 
+
+POUR MOI : 
 
 > sbatch /home/users/efeillet/expe/AdvisIL/hp_tuning/launsher_hp_tuner_1.sh
 
 Similarily, launch `launsher_hp_tuner_2.sh` and `launsher_hp_tuner_3.sh`.
 
-Collect & Analyse results
+This last step allows you to collect and analyse results.  A TRANSFORMER en NOTEBOOK pour avoir les images sur le serveur.
 
 > python /home/users/efeillet/incremental-scaler/hp_tuning/tuning_analyser.py
 
