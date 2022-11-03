@@ -198,7 +198,7 @@ This last step allows you to collect and analyse results.  A TRANSFORMER en NOTE
 
 ### Scaling experiments
 
-We have run scaling experiments to propose our scaling heuristic in the case of a class-incremental learning task. In the following scripts, we use LUCIR algorithm for scaling experiments. Similar guidelines apply for other methods. See below for more details on each incremental learning algorithm.
+We have run scaling experiments to propose a scaling heuristic in the case of a class-incremental learning task. In the following scripts, we perform scaling experiments using the LUCIR algorithm and the ??? dataset. Similar guidelines apply for other methods and datasets (see below for more details on each incremental learning algorithm). Similar observations apply too.
 
 1. Define settings --> output yaml files
 
@@ -212,32 +212,38 @@ First, set paths in config_writer.cf, in particular the path to your input yaml 
 
 3. Run experiments using the launcher files
 
-Recommended : split the experiments across several launcher files (manually), depending on your available computing resources and on the number of trials you wish to run for each particular experimental setting. Don't forget to give the jobs different names so that you can cancel them individually if needed. Also take great care in naming the log and error files so that they are easily findable and don't confilct with each other. See example below. 
+_Recommendation_ : As this study involves numerous experiments, we uadvise you to split the experiments across several launcher files (manually), depending on your available computing resources and on the number of trials you wish to run for each particular experimental setting. Don't forget to give the jobs different names so that you can cancel them individually if needed. Also make your you name the log and error files so that you find them easily and so that they don't conflict with each other. 
+
+See example below. 
 
 > /home/data/efeillet/expe/scaling/imagenet_fauna/imagenet_fauna_lucir_equi_s10/unique/LUCIR/u_launcher_LUCIR_1.sh
 
-4. Parse log files
+TO DO CHANGE PATHS and provide launcher file in sclaing subfolder
 
-Again, pay attention to the name of your output files so that you do not erase previous files incidentally by running the script on different data but with the same output name.
+4. Parse log files and plot results
+
+_Again, pay attention to the name of your output files so that you do not erase previous files incidentally by running the script on different data but with the same output name._
+
+Running the following command, parse the log files. 
 
 > python /home/users/efeillet/incremental-scaler/scaling/log_parser.py /home/users/efeillet/incremental-scaler/scaling/log_parser.cf
 
-5. Plot results
-
-Plot initial accuracies
+Finally, plot the average incremental accuracy for each architecture.
 
 > python /home/users/efeillet/incremental-scaler/scaling/RFIAP_plots.py
 
-Plot average incremental accuracy
+
+NB : If you wish to see the initial state only, run the following commands.
 
 > python /home/users/efeillet/incremental-scaler/scaling/log_parser_init.py /home/users/efeillet/incremental-scaler/scaling/log_parser_init.cf
 
 > python /home/users/efeillet/incremental-scaler/scaling/RFIAP_plots_init.py
 
 
+
 ### Running Incremental Learning Methods
 
-### Test runs on reference datasets /EXPE/
+### Test runs on reference datasets /EXPE/ --> reproducing performance on reference datasets. 
 
 See launchers in /home/users/efeillet/expe/AdvisIL/ref.
 

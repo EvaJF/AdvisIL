@@ -1,0 +1,7 @@
+[log_parser_init.py]
+root_dir = /home/data/efeillet/expe/scaling/imagenet_fauna/imagenet_fauna_lucir_equi_s10/unique/LUCIR/logs
+save_dir = /home/data/efeillet/expe/scaling
+prefix = fauna_
+ntot_classes_ref = 100
+epochs_init_ref = 70
+epochs_incr_ref =  70
