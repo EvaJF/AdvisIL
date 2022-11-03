@@ -1,0 +1,9 @@
+[config_writer.py]
+yaml_folder_path = None
+yaml_file_path = /home/users/efeillet/expe/scaling/imagenet_fauna_lucir_equi_s10_scaling.yaml
+output_dir = /home/data/efeillet/expe/scaling
+datasets_mean_std_file_path = /home/users/efeillet/images_list_files/datasets_mean_std.txt
+dataset_files_dir = /home/users/efeillet/images_list_files/train100/
+partition_gpu = lasti,gpup100,gpuv100,gpu
+u_dataset = imagenet_fauna
+u_prefix = imagenet_fauna_lucir_equi_s10

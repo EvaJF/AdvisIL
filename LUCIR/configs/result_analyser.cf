@@ -1,0 +1,8 @@
+[result_analyser.py]
+root_dir = /home/users/efeillet/expe/results/inat/inat_s10_k0
+dataset = imagenet_random_0
+ntot_states = 10
+ntot_classes = 100
+epochs_init = 70
+epochs_incr = 70
+algo = lucir

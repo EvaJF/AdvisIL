@@ -1,0 +1,8 @@
+[result_analyser_concat.py]
+root_dir = /home/users/efeillet/expe/scaling/imagenet_fauna/imagenet_fauna_lucir_equi_s10/unique/LUCIR/logs
+dataset = imagenet_fauna
+ntot_states = 10
+ntot_classes = 100
+epochs_init = 70
+epochs_incr = 70
+algo = lucir

@@ -1,0 +1,621 @@
+expe0:
+  backbone : mobilenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+
+expe1:
+  backbone : mobilenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 2.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe2:
+  backbone : mobilenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+
+expe3:
+  backbone : mobilenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 2.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe4:
+  backbone : mobilenet # base architecture
+  width_mult : 0.5 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+
+expe5:
+  backbone : mobilenet # base architecture
+  width_mult : 0.5 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe6:
+  backbone : mobilenet # base architecture
+  width_mult : 0.5 # width multiplier
+  depth_mult : 2.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe7:
+  backbone : mobilenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe8:
+  backbone : mobilenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe9:
+  backbone : mobilenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe10:
+  backbone : mobilenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe11:
+  backbone : mobilenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe12:
+  backbone : mobilenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe13:
+  backbone : mobilenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe14:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe15:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.4 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe16:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe17:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.4 # width multiplier
+  depth_mult : 0.4 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe18:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.4 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe19:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.6 # width multiplier
+  depth_mult : 0.4 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe20:
+  backbone : resnetBasic # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe21:
+  backbone : shufflenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe22:
+  backbone : shufflenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe23:
+  backbone : shufflenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe24:
+  backbone : shufflenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe25:
+  backbone : shufflenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+exp26:
+  backbone : shufflenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe27:
+  backbone : shufflenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe28:
+  backbone : shufflenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe29:
+  backbone : shufflenet # base architecture
+  width_mult : 0.5 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe30:
+  backbone : shufflenet # base architecture
+  width_mult : 0.5 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+
+expe31:
+  backbone : shufflenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe32:
+  backbone : shufflenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+  expe33:
+    backbone : shufflenet # base architecture
+    width_mult : 0.75 # width multiplier
+    depth_mult : 0.75 # depth multiplier
+    normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+    datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+    train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+    test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+    B : 10 # number of classes in the first, non-incremental state
+    P : 10 # number of classes per incremental state
+    last_batch_number : 10
+    IL_method : LUCIR  
+    epochs : 70 # scratch / first batch
+    
+
+expe34:
+  backbone : shufflenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe35:
+  backbone : shufflenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe36:
+  backbone : shufflenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe37:
+  backbone : shufflenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+
+expe38:
+  backbone : shufflenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe39:
+  backbone : shufflenet # base architecture
+  width_mult : 2.0 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+expe40:
+  backbone : shufflenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : imagenet_fauna # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : LUCIR  
+  epochs : 70 # scratch / first batch
+  
+
+
