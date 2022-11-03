@@ -260,7 +260,7 @@ We use the SPB-M version, which uses a data augmentation procedure based on imag
 
 Example code for launching SPB-M.
 
-> python /home/users/efeillet/incremental-scaler/SPBM/codes/main.py /home/users/efeillet/incremental-scaler/SPBM/configs/???.cf
+> python /home/users/efeillet/incremental-scaler/SPBM/codes/main.py /home/users/efeillet/incremental-scaler/SPBM/configs/SPBM.cf
 
 #### c. DeepSLDA 
 

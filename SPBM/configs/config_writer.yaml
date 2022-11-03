@@ -1,0 +1,662 @@
+expe0:
+  backbone : mobilenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+
+expe1:
+  backbone : mobilenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 2.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe2:
+  backbone : mobilenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+
+expe3:
+  backbone : mobilenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 2.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe4:
+  backbone : mobilenet # base architecture
+  width_mult : 0.5 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+
+expe5:
+  backbone : mobilenet # base architecture
+  width_mult : 0.5 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe6:
+  backbone : mobilenet # base architecture
+  width_mult : 0.5 # width multiplier
+  depth_mult : 2.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe7:
+  backbone : mobilenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe8:
+  backbone : mobilenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe9:
+  backbone : mobilenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe10:
+  backbone : mobilenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe11:
+  backbone : mobilenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe12:
+  backbone : mobilenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe13:
+  backbone : mobilenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe14:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe15:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.4 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe16:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe17:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.4 # width multiplier
+  depth_mult : 0.4 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe18:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.4 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe19:
+  backbone : resnetBasic # base architecture
+  width_mult : 0.6 # width multiplier
+  depth_mult : 0.4 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe20:
+  backbone : resnetBasic # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe21:
+  backbone : shufflenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe22:
+  backbone : shufflenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe23:
+  backbone : shufflenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe24:
+  backbone : shufflenet # base architecture
+  width_mult : 0.1 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe25:
+  backbone : shufflenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+exp26:
+  backbone : shufflenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe27:
+  backbone : shufflenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe28:
+  backbone : shufflenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe29:
+  backbone : shufflenet # base architecture
+  width_mult : 0.5 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe30:
+  backbone : shufflenet # base architecture
+  width_mult : 0.5 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+
+expe31:
+  backbone : shufflenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe32:
+  backbone : shufflenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+  expe33:
+    backbone : shufflenet # base architecture
+    width_mult : 0.75 # width multiplier
+    depth_mult : 0.75 # depth multiplier
+    normalization_dataset_name : inat # as written in the reference normalization file
+    datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+    train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+    test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+    B : 10 # number of classes in the first, non-incremental state
+    P : 10 # number of classes per incremental state
+    last_batch_number : 10
+    IL_method : SPB-M  
+    first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+    
+
+expe34:
+  backbone : shufflenet # base architecture
+  width_mult : 0.75 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe35:
+  backbone : shufflenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe36:
+  backbone : shufflenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe37:
+  backbone : shufflenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 0.75 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+
+expe38:
+  backbone : shufflenet # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe39:
+  backbone : shufflenet # base architecture
+  width_mult : 2.0 # width multiplier
+  depth_mult : 0.2 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+expe40:
+  backbone : shufflenet # base architecture
+  width_mult : 0.2 # width multiplier
+  depth_mult : 0.5 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  B : 10 # number of classes in the first, non-incremental state
+  P : 10 # number of classes per incremental state
+  last_batch_number : 10
+  IL_method : SPB-M  
+  first_epochs : 70 # scratch / first batch
+  subsequent_epochs : 50 # incremental states
+  
+
+
