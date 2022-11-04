@@ -1,0 +1,111 @@
+expe0:
+  dataset_v : inat100 # for config folder / dataset name + number of classes used in total 
+  backbone : resnetBasic # base architecture
+  width_mult : 1.0 # width multiplier
+  depth_mult : 1.0 # depth multiplier
+  normalization_dataset_name : inat # as written in the reference normalization file
+  last_batch_number : 10 # also S, index
+  num_batches : 10 # total number of batches to come
+  P : 10 # number of classes per batch
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst # caution, val is in fact test here
+  algo_name : no_mem_ft # here memoryless fine_tuning
+  IL_method : inFT_siw # combined with standardization of initial weights as in Belouadah et al. 
+  num_epochs_batch1 : 100 # scratch / first batch
+  num_epochs_inc :  70 # incremental states
+
+expe1:
+  dataset_v : inat100 
+  backbone : resnetBasic
+  width_mult : 0.1
+  depth_mult : 1.0
+  normalization_dataset_name : inat
+  last_batch_number : 10 # also S
+  num_batches : 10 # total number of batches to come
+  P : 10 # number of classes per batch
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
+  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  algo_name : no_mem_ft
+  IL_method : inFT_siw
+  num_epochs_batch1 : 100 # scratch / first batch
+  num_epochs_inc :  70 # incremental states
+
+expe2:
+  dataset_v : inat100 
+  backbone : resnetBasic
+  width_mult : 0.2
+  depth_mult : 0.4
+  normalization_dataset_name : inat
+  last_batch_number : 10 # also S
+  num_batches : 10 # total number of batches to come
+  P : 10 # number of classes per batch
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
+  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  algo_name : no_mem_ft
+  IL_method : inFT_siw
+  num_epochs_batch1 : 100 # scratch / first batch
+  num_epochs_inc :  70 # incremental states
+
+expe3:
+  dataset_v : inat100 
+  backbone : resnetBasic
+  width_mult : 0.2
+  depth_mult : 1.0
+  normalization_dataset_name : inat
+  last_batch_number : 10 # also S
+  num_batches : 10 # total number of batches to come
+  P : 10 # number of classes per batch
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
+  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  algo_name : no_mem_ft
+  IL_method : inFT_siw
+  num_epochs_batch1 : 100 # scratch / first batch
+  num_epochs_inc :  70 # incremental states
+
+expe4:
+  dataset_v : inat100 
+  backbone : resnetBasic
+  width_mult : 0.4
+  depth_mult : 0.4
+  normalization_dataset_name : inat
+  last_batch_number : 10 # also S
+  num_batches : 10 # total number of batches to come
+  P : 10 # number of classes per batch
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
+  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  algo_name : no_mem_ft
+  IL_method : inFT_siw
+  num_epochs_batch1 : 100 # scratch / first batch
+  num_epochs_inc :  70 # incremental states
+
+expe5:
+  dataset_v : inat100 
+  backbone : resnetBasic
+  width_mult : 0.4
+  depth_mult : 1.0
+  normalization_dataset_name : inat
+  last_batch_number : 10 # also S
+  num_batches : 10 # total number of batches to come
+  P : 10 # number of classes per batch
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
+  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  algo_name : no_mem_ft
+  IL_method : inFT_siw
+  num_epochs_batch1 : 100 # scratch / first batch
+  num_epochs_inc :  70 # incremental states
+
+expe6:
+  dataset_v : inat100 
+  backbone : resnetBasic
+  width_mult : 0.6
+  depth_mult : 0.4
+  normalization_dataset_name : inat
+  last_batch_number : 10 # also S
+  num_batches : 10 # total number of batches to come
+  P : 10 # number of classes per batch
+  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
+  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  algo_name : no_mem_ft
+  IL_method : inFT_siw
+  num_epochs_batch1 : 100 # scratch / first batch
+  num_epochs_inc :  70 # incremental states

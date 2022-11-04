@@ -12,6 +12,7 @@ __pycache__/
 # Folder for test logs 
 ./test
 ./test/*
+./SIW/FT/configs/mininat
 
 # Distribution / packaging
 .Python

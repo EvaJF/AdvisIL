@@ -264,9 +264,9 @@ Example code for launching SPB-M.
 
 #### c. DeepSLDA 
 
-Our implementation is based on the [original repository](https://github.com/tyler-hayes/Deep_SLDA) of Tayler Hayes.
+Our implementation is based on the [original repository](https://github.com/tyler-hayes/Deep_SLDA) of Tyler Hayes.
 
-#### d. SIW
+#### d. SIW attention j'ai renommé le dossier siw -> SIW
 
 Our implementation is based on the [original repository](https://github.com/EdenBelouadah/class-incremental-learning/tree/master/siw) of Eden Belouadah.
 

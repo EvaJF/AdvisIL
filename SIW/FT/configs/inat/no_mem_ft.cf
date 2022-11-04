@@ -1,0 +1,33 @@
+[no_mem_ft.py]
+datasets_mean_std_file_path = /home/users/efeillet/images_list_files/datasets_mean_std.txt
+num_workers = 1
+gpu = 0
+##############################
+backbone = resnetBasic
+width_mult = 1.0
+depth_mult = 1.0
+########
+old_batch_size=128
+new_batch_size=32
+test_batch_size=128
+exemplars_batch_size = 128
+starting_epoch=0
+num_epochs = 70
+lr_decay=0.1
+lr=0.1
+momentum=0.9
+weight_decay=0.0005
+patience = 15
+normalization_dataset_name = inat
+############
+first_batch_number = 2
+last_batch_number = 10
+P = 10
+##############################
+algo_name = nomemft
+num_batches = 10
+dataset_files_dir = /home/users/efeillet/images_list_files/train100/
+first_batch_model_load_path =  /home/users/efeillet/expe/results/inat/inat_s10/scratch/inat_s10_resnetBasic_w1.0_d1.0_batch1.pt
+############################## DO NOT CHANGE
+saving_intermediate_models = False
+models_save_dir = /home/users/efeillet/expe/results/

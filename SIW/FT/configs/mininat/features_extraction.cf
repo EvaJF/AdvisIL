@@ -1,0 +1,19 @@
+[features_extraction.py]
+num_workers = 1
+batch_size = 128
+gpu = 0
+normalization_dataset_name = mininat
+P = 10
+S = 3
+datasets_mean_std_file_path = /home/users/efeillet/images_list_files/datasets_mean_std.txt
+########
+backbone = resnetBasic
+width_mult = 1.0
+depth_mult = 1.0
+########
+first_batch_model_load_path = /home/users/efeillet/expe/results/mininat/mininat_s3/resnetBasic_w1.0_d1.0/scratch/mininat_s3_resnetBasic_w1.0_d1.0_batch1.pt
+inc_models_load_path_prefix =  /home/users/efeillet/expe/results/mininat/mininat_s3/resnetBasic_w1.0_d1.0/nomemft_models/nomemft_mininat_s3_resnetBasic_w1.0_d1.0_batch
+images_list_dir = /home/users/efeillet/images_list_files/train100/
+fc_params_destination_path = /home/users/efeillet/expe/results/
+
+
