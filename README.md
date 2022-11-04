@@ -34,21 +34,21 @@ Subfolders
 * parsing : ?
 * reco : modifier avec code Adrian
 * scaling : OK
-* siw
-* SPBM : TODO modif learning rate cf Slack
+* siw : OK
+* SPBM : TODO modif learning rate cf Slack !! à faire dans les 2 repos
 
 
 à terme
 
+* DSLDA : à rajouter ? demander à Adrian sa version du code
+* modifier tous les noms de chemins dans le tuto, e.g. in config files : root --> /AdvisIL/...
+* traquer les éléments hard codés dans les fichiers, mettre en paramètres les chemins et autres noms. --> faire un search automatique "home/data" et "home/users" et "efeillet" pour vérifier 
+
+* captions folder --> image principe advisil OK
 * add a requirements file --> py37 env OK
 * image_list_files > train100 OK
 * model_utils et code backbones --> créer un dossier models OK
-* DSLDA : à rajouter
 * virer fichiers scaler, scaling et tutorial. OK
-* modifier tous les noms de chemins, e.g. in config files : root --> /AdvisIL/...
-* traquer les éléments hard codés, mettre en paramètres les chemins et autres noms.
-* captions folder --> image principe advisil OK
-
 _____
 
 
@@ -256,6 +256,8 @@ _Useful tip: For convenience, we reuse the first state obtained by running LUCIR
 
 #### b. SPB-M
 
+TODO modif learning rate cf Slack !!
+
 We use the SPB-M version, which uses a data augmentation procedure based on image rotations. As no official code with released for this method, we based our implementation on LUCIR’s implementation, with a modified loss function and SPB-M’s data augmentation procedure. Unfortunately, our implementation does not reac the same accuracy as in the original paper. Contributions are welcome to improve this. 
 
 Example code for launching SPB-M.
@@ -292,7 +294,7 @@ See our [dedicated repository](https://github.com/GregoirePetit/DeeSIL).
 
 Our implementation of FeTrIL is shared [here](https://github.com/GregoirePetit/FeTrIL).
 
-
+!!! dossier ancien nom MobIL --> renommé en FeTrIL
 
 ### 6. Compute reference experiments for AdvisIL using reference scenarios
 
@@ -349,13 +351,12 @@ see if necessary/easy.
 ### 10. Wrapping up
 
 In this repository, we provide a detailed tutorial to :
-- reproduce our results
-- contribute with your own results.
+- reproduce the results presented in our WACV 2023 article "AdvisIL - A Class-Incremental Learning Advisor",
+- contribute to AdvisIL's recommendations by adding your own results to the database of pre-computed experiments.
 
 TODO rappeler les avantages d'AdvsIL.
 As AdvisIL is thought as a collaborative tool, don't hesitate to contribute to this repository by :
 - reporting issues
 - adding algorithms, backbones and datasets
 - adding experimental results.
-
 Thanks for your contribution !
