@@ -2,14 +2,12 @@
 
 In this repository, we share the code for reproducing the results of our article "AdvisIL - A Class-Incremental Learning Advisor" accepted at WACV 2023. This repository also aims at facilitating contributions to the set of reference experiments used by AdvisIL's recommender system. 
 
-**How to cite :** 
-Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "AdvisIL - A Class-Incremental Learning Advisor", _Winter Conference on Applications of Computer Vision_, January 2023, Waikoloa, USA. 
-
 **Abstract**
-> Recent class-incremental learning methods combine deep neural architectures and learning algorithms to handle streaming data under memory and computational constraints. The performance of existing methods varies depending on the characteristics of the incremental process. To date, there is no other approach than to test all pairs of learning algorithms and neural architectures on the training data available at the start of the learning process to select a suited algorithm-architecture combination. 
+
+_Recent class-incremental learning methods combine deep neural architectures and learning algorithms to handle streaming data under memory and computational constraints. The performance of existing methods varies depending on the characteristics of the incremental process. To date, there is no other approach than to test all pairs of learning algorithms and neural architectures on the training data available at the start of the learning process to select a suited algorithm-architecture combination. 
 To tackle this problem, in this article, we introduce AdvisIL, a method which takes as input the main characteristics of the incremental process (memory budget for the deep model, initial number of classes, size of incremental steps) and recommends an adapted pair of learning algorithm and neural architecture. The recommendation is based on a similarity between the user-provided settings and a large set of pre-computed experiments.
 AdvisIL makes class-incremental learning easier, since users do not need to run cumbersome experiments to design their system.  
-We evaluate our method on four datasets under six incremental settings and three deep model sizes. We compare six algorithms and three deep neural architectures. Results show that AdvisIL has better overall performance than any of the individual combinations of a learning algorithm and a neural architecture.
+We evaluate our method on four datasets under six incremental settings and three deep model sizes. We compare six algorithms and three deep neural architectures. Results show that AdvisIL has better overall performance than any of the individual combinations of a learning algorithm and a neural architecture._
 
 <img
   src="captions/advisIL_principle.png"
@@ -17,13 +15,16 @@ We evaluate our method on four datasets under six incremental settings and three
   title="AdvisIL's principle"
   style="display: inline-block; margin: 0 auto; max-width: 250px">
 
+**How to cite**
 
+Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "AdvisIL - A Class-Incremental Learning Advisor", _Winter Conference on Applications of Computer Vision_, January 2023, Waikoloa, USA. 
 _____
 
 
 **Content of this repository** to update at the end
 
 Subfolders
+
 * AdvisIL TODO changer nom --> configs_utils OK 
 * build_datasets : copier dossier clean local, comment obtenir les splits ImageNet + fournir les listes de fichiers dans un autre dossier image_list_files OK
 * ajouter image_list_files/train100 + ma version locale pour les subsets imagenet OK
@@ -39,7 +40,7 @@ Subfolders
 * SPBM : TODO modif learning rate cf Slack !! à faire dans les 2 repos
 
 
-à terme
+TODO list
 
 * DSLDA : à rajouter ? demander à Adrian sa version du code
 * modifier tous les noms de chemins dans le tuto, e.g. in config files : root --> /AdvisIL/...
@@ -57,7 +58,8 @@ _____
 
 __Outline__
 
-1. Check the requirements8
+0. Check the requirements
+1. 
 2. 
 3. 
 4. 
@@ -67,6 +69,7 @@ __Outline__
 8. 
 9. 
 10. Wrapping up 
+
 
 ### 0. Check the requirements
 
@@ -137,8 +140,7 @@ __Sanity check__
 
 You must obtain the same mean and standard deviation values as in [`datasets_mean_std.txt`](./images_list_files/datasets_mean_std.txt) . 
 
-**Optional** : To create your own ImageNet subset, see the dedicated [tutorial](./imagenet/tutorial.md).
-
+*Optional* : To create your own ImageNet subset, see the dedicated [tutorial](./imagenet/tutorial.md).
 
  __b) Other datasets__
 
@@ -165,7 +167,6 @@ The file is structured as follows :
 Note that this list actually contains more data than we actually used : in our experiments we only consider the first 100 classes of Food101, leaving out the last one. But we provide a complete split for the 101 classes in case you wish to use them all. 
 
 
-
 ### 2. Explore neural architectures
 
 We have made preliminary experiments to study the impact of architecture on the incremental performance of small convolutional neural networks. Therefore we have implemented a more flexible version of ResNet, MobileNetv2 and ShuffleNetv2 which allow to scale the architecture according to its width (number of convolutional filters) and depth (number of building blocks). These custom architectures are implemented [here](./models/).
@@ -179,7 +180,7 @@ To explore the architectures, run the following script. You will see the number 
 
 Before running the main experiments, we search for suitable hyperparameters for each neural architecture. 
 
-__Prerequisite__ : We use ray-tune to perform hyperparameter tuning. The following command installs Ray and dependencies for Ray Tune.
+_Prerequisite_ : We use ray-tune to perform hyperparameter tuning. The following command installs Ray and dependencies for Ray Tune.
 
 > pip install -U "ray[tune]"  
 
@@ -350,7 +351,8 @@ A typical arborescence is the following : TO ADD (screenshot ?)
 ### 7. Compute recommendations for reference scenarios using AdvisIL
 
 TO ADD : csv with parsed results for ref and test. 
-TO ADD : code with ranking reco. 
+
+TO ADD : code with ranking reco. --> folder `reco`
 
 ### 8. Compute recommendations for test scenarios using AdvisIL 
 
