@@ -1,0 +1,8 @@
+[config_writer_siw.py]
+yaml_folder_path = /home/data/efeillet/expe/AdvisIL_test/yaml_files/siw
+save_root_dir = /home/data/efeillet/expe/AdvisIL_test
+datasets_mean_std_file_path = /home/users/efeillet/images_list_files/datasets_mean_std.txt
+dataset_files_dir = /home/users/efeillet/images_list_files/train100/
+partition_gpu = lasti,gpup100,gpuv100,gpu
+u_dataset = None
+u_prefix = None

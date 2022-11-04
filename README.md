@@ -1,8 +1,9 @@
-# AdvisIL
-Repository for AdvisIL - A Class-Incremental Learning Advisor (WACV2023)
+# AdvisIL - A Class-Incremental Learning Advisor
 
-In this repository, we share the code for reproducing the results of our article "AdvisIL - A Class-Incremental Learning Advisor" and for contributing to the set of reference experiments used by AdvisIL's recommender system.
+In this repository, we share the code for reproducing the results of our article "AdvisIL - A Class-Incremental Learning Advisor" accepted at WACV 2023. This repository also aims at facilitating contributions to the set of reference experiments used by AdvisIL's recommender system. 
 
+**How to cite :** 
+Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "AdvisIL - A Class-Incremental Learning Advisor", _Winter Conference on Applications of Computer Vision_, January 2023, Waikoloa, USA. 
 
 **Abstract**
 > Recent class-incremental learning methods combine deep neural architectures and learning algorithms to handle streaming data under memory and computational constraints. The performance of existing methods varies depending on the characteristics of the incremental process. To date, there is no other approach than to test all pairs of learning algorithms and neural architectures on the training data available at the start of the learning process to select a suited algorithm-architecture combination. 
@@ -16,22 +17,22 @@ We evaluate our method on four datasets under six incremental settings and three
   title="AdvisIL's principle"
   style="display: inline-block; margin: 0 auto; max-width: 250px">
 
-**How to cite :** 
-Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "AdvisIL - A Class-Incremental Learning Advisor", _Winter Conference on Applications of Computer Vision_, January 2023, Waikoloa, USA. 
+
 _____
 
 
-**Content of this repository**
+**Content of this repository** to update at the end
 
 Subfolders
-* AdvisIL TODO changer nom --> configs_utils
+* AdvisIL TODO changer nom --> configs_utils OK 
 * build_datasets : copier dossier clean local, comment obtenir les splits ImageNet + fournir les listes de fichiers dans un autre dossier image_list_files OK
 * ajouter image_list_files/train100 + ma version locale pour les subsets imagenet OK
-* deesil : vérifier contenu, lister les choses à conserver ou pas
+* deesil : vérifier contenu, lister les choses à conserver ou pas OK
 * hp_tuning OK
-* LUCIR
-* MobIL : maj ? --> pointer vers nouveau repo FeTrIL
-* parsing : ?
+* LUCIR OK
+* MobIL : maj ? --> pointer vers nouveau repo FeTrIL OK
+* parsing : ne pas publier
+* ajouter dossier results avec les csv (moyennés)
 * reco : modifier avec code Adrian
 * scaling : OK
 * siw : OK
@@ -53,6 +54,19 @@ _____
 
 
 ## Tutorial 
+
+__Outline__
+
+1. Check the requirements8
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. Wrapping up 
 
 ### 0. Check the requirements
 
