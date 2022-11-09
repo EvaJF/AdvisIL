@@ -59,15 +59,15 @@ _____
 __Outline__
 
 0. Check the requirements
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
+1. Get the datasets
+2. Explore neural architectures
+3. Tune your hyperparameters
+4. Take a look at our scaling experiments
+5. Get familiar with a few incremental learning algorithms
+6. Compute reference experiments for AdvisIL using reference scenarios
+7. Compute recommendations for reference scenarios using AdvisIL 
+8. Compute recommendations for test scenarios using AdvisIL 
+9. Analyze the results
 10. Wrapping up 
 
 
@@ -358,7 +358,7 @@ TO ADD : code with ranking reco. --> folder `reco`
 
 Do the same thing for test experiments. 
 
-### 9. Analyze your results
+### 9. Analyze the results
 
 Last but not least, plot a few visualizations
 
