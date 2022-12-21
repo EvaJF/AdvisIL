@@ -22,14 +22,13 @@ _____
 TODO list
 
 * parsing : ne pas publier -->nettoyer les dossiers
-* ajouter dossier results avec les csv (moyennés)
-* reco : modifier avec code Adrian
 * SPBM : TODO modif learning rate cf Slack !! à faire dans les 2 repos
-* DSLDA : à rajouter ? demander à Adrian sa version du code DEL
 * modifier tous les noms de chemins dans le tuto, e.g. in config files : root --> /AdvisIL/...
 * traquer les éléments hard codés dans les fichiers, mettre en paramètres les chemins et autres noms. --> faire un search automatique "home/data" et "home/users" et "efeillet" pour vérifier 
 * Content : to update at the end
 
+* ajouter dossier results avec les csv (moyennés) OK
+* reco : modifier avec code Adrian OK
 * captions folder --> image principe advisil OK
 * add a requirements file --> py37 env OK
 * image_list_files > train100 OK
@@ -45,9 +44,10 @@ TODO list
 * scaling : OK
 * siw : OK
 * add citations for algo. OK
+
+* DSLDA : à rajouter ? demander à Adrian sa version du code DEL
+
 _____
-
-
 ## Tutorial 
 
 __Outline__
@@ -375,7 +375,10 @@ In this repository, we provide a detailed tutorial to :
 - reproduce the results presented in our WACV 2023 article "AdvisIL - A Class-Incremental Learning Advisor",
 - contribute to AdvisIL's recommendations by adding your own results to the database of pre-computed experiments.
 
-TODO rappeler les avantages d'AdvsIL.
+AdvisIL facilitates the choice of a suited pair of CIL algorithm and backbone network for a user-defined incremental learning scenario. 
+AdvisIL requires little information from the user and provides a recommendation by leveraging trends observed on pre-computed experiments from a set of reference configurations. 
+Our evaluation indicates that AdvisIL is effective, as it often provides a relevant recommendation.
+
 As AdvisIL is thought as a collaborative tool, don't hesitate to contribute to this repository by :
 - reporting issues
 - adding algorithms, backbones and datasets
