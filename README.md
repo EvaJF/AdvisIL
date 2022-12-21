@@ -17,14 +17,24 @@ We evaluate our method on four datasets under six incremental settings and three
 
 **How to cite**
 
-Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "AdvisIL - A Class-Incremental Learning Advisor", _Winter Conference on Applications of Computer Vision_, January 2023, Waikoloa, USA. 
+Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "AdvisIL - A Class-Incremental Learning Advisor", Proceedings of the Winter Conference on Applications of Computer Vision. 2023. 
 _____
+TODO list
 
+* parsing : ne pas publier -->nettoyer les dossiers
+* ajouter dossier results avec les csv (moyennés)
+* reco : modifier avec code Adrian
+* SPBM : TODO modif learning rate cf Slack !! à faire dans les 2 repos
+* DSLDA : à rajouter ? demander à Adrian sa version du code DEL
+* modifier tous les noms de chemins dans le tuto, e.g. in config files : root --> /AdvisIL/...
+* traquer les éléments hard codés dans les fichiers, mettre en paramètres les chemins et autres noms. --> faire un search automatique "home/data" et "home/users" et "efeillet" pour vérifier 
+* Content : to update at the end
 
-**Content of this repository** to update at the end
-
-Subfolders
-
+* captions folder --> image principe advisil OK
+* add a requirements file --> py37 env OK
+* image_list_files > train100 OK
+* model_utils et code backbones --> créer un dossier models OK
+* virer fichiers scaler, scaling et tutorial. OK
 * AdvisIL TODO changer nom --> configs_utils OK 
 * build_datasets : copier dossier clean local, comment obtenir les splits ImageNet + fournir les listes de fichiers dans un autre dossier image_list_files OK
 * ajouter image_list_files/train100 + ma version locale pour les subsets imagenet OK
@@ -32,25 +42,9 @@ Subfolders
 * hp_tuning OK
 * LUCIR OK
 * MobIL : maj ? --> pointer vers nouveau repo FeTrIL OK
-* parsing : ne pas publier
-* ajouter dossier results avec les csv (moyennés)
-* reco : modifier avec code Adrian
 * scaling : OK
 * siw : OK
-* SPBM : TODO modif learning rate cf Slack !! à faire dans les 2 repos
-
-
-TODO list
-
-* DSLDA : à rajouter ? demander à Adrian sa version du code
-* modifier tous les noms de chemins dans le tuto, e.g. in config files : root --> /AdvisIL/...
-* traquer les éléments hard codés dans les fichiers, mettre en paramètres les chemins et autres noms. --> faire un search automatique "home/data" et "home/users" et "efeillet" pour vérifier 
-
-* captions folder --> image principe advisil OK
-* add a requirements file --> py37 env OK
-* image_list_files > train100 OK
-* model_utils et code backbones --> créer un dossier models OK
-* virer fichiers scaler, scaling et tutorial. OK
+* add citations for algo. OK
 _____
 
 
@@ -61,8 +55,8 @@ __Outline__
 0. Check the requirements
 1. Get the datasets
 2. Explore neural architectures
-3. Tune your hyperparameters
-4. Take a look at our scaling experiments
+3. Tune hyperparameters
+4. Take a look at some preliminary scaling experiments
 5. Get familiar with a few incremental learning algorithms
 6. Compute reference experiments for AdvisIL using reference scenarios
 7. Compute recommendations for reference scenarios using AdvisIL 
@@ -71,13 +65,34 @@ __Outline__
 10. Wrapping up 
 
 
+**Content of this repository** 
+
+Subfolders 
+* captions  
+* config_utils : automatically generate config files for the experiments 
+* FeTrIL : incremental learning algorithm  
+* hp_tuning : sample scripts for hyperparameter tuning 
+* imagenet : how to build custom imagenet subsets 
+* images_list_files : utility functions and image lists for loading the data 
+* LUCIR : incremental learning algorithm 
+* models : neural network architectures and utility functions  
+* reco : AdvisIL recommendations
+* results : pre-computed experimental results 
+* scaling : scaling experimetns and utility functions 
+* SIW : incremental learning algorithm 
+* SPBM : incremental learning algorithm 
+* (test : to test the repo)
+* py37_requirements.txt : requirements file to reproduce the environment
+* py37_requirements_linux64.txt : idem (Linux specific)
+
+
 ### 0. Check the requirements
 
 We use Python deep learning framework PyTorch (`Python version 3.7`, `torch version 1.7.1+cu110`) in association with cuda (`CUDA Version: 11.4`).
 
-In a future release, we plan to integrate our code with Avalanche continual learning library. The packages used in this repository are compatible with the current version of Avalanche and ray[tune].
+In a future release, we plan to integrate our code with Avalanche continual learning library. Note that the packages used in this repository are compatible with the current version of Avalanche and ray[tune].
 
-To start with, we advise you to create a virtual environment dedicated to this project with conda. You can use the requirements file `requirements_py37.txt`, or alternatively the explicit `py37_requirements_linux64.txt` if you have a Linux distribution.
+To start with, we recommend creating a virtual environment dedicated to this project using conda. Use the requirements file `requirements_py37.txt`, or alternatively the explicit `py37_requirements_linux64.txt` for a Linux distribution.
 
 > conda create --name py37 --file requirements_py37.txt
 
@@ -88,57 +103,34 @@ To use this environment :
 
 ### 1. Get the datasets
 
+In our article we consider nine datasets. Six of them are sampled from ImageNet-21k. The others are Food101, Google Landmarks (v2) and iNaturalist (v2018).
+
 __a) ImageNet subsets__
 
-We consider six datasets which are sampled from the full ImageNet-21k database. The three datasets are thematic, and were
-obtained by sampling leaf ImageNet classes which belong to the “food”, “fauna”, and “flora” sub-hierarchies, respectively.
+We used six datasets sampled from ImageNet-21k database. Three of them are thematic, and were
+obtained by sampling leaf classes from ImageNet belonging to the “food”, “fauna”, and “flora” sub-hierarchies, respectively.
 The three other datasets were obtained by randomly sampling classes from ImageNet. 
 Each dataset contains 100 classes, with 340 images per class for training, and 60 images for testing. 
 Each sampled class is only used in one dataset.
 
 **Prerequisite** : access to [ImageNet-21K full database](https://www.image-net.org/).
 
-For each ImageNet subset, run the following commands to (1) get the images in a dedicated folder, and (2) compute the mean and standard deviation of the colour channels.  
+For each ImageNet subset, run the following commands to (1) get the images in a dedicated folder, and for sanity check (2) compute the mean and standard deviation of the colour channels.  
 
-* RANDOM0 subset
+* RANDOM0, RANDOM1 and RANDOM2 subsets
 
-> python AdvisIL/imagenet/build_datasets/imagenet_random_subsetter.py AdvisIL/imagenet/build_datasets/imagenet_random_subsetter0.cf
+> python AdvisIL/imagenet/build_datasets/imagenet_random_subsetter.py AdvisIL/imagenet/build_datasets/imagenet_random_subsetter<0|1|2>.cf
 
-> python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_random_0/train.lst 
+> python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_random_<0|1|2>/train.lst 
 
-* RANDOM1 subset
+* FLORA, FAUNA and FOOD subsets
 
-> python AdvisIL/imagenet/build_datasets/imagenet_random_subsetter.py AdvisIL/imagenet/build_datasets/imagenet_random_subsetter1.cf
+> python AdvisIL/imagenet/build_datasets/imagenet_subsetter.py AdvisIL/imagenet/build_datasets/imagenet_subsetter_<fauna|flora|food>.cf
 
-> python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_random_1/train.lst 
+> python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_<fauna|flora|food>/train.lst 
 
-* RANDOM2 subset
 
-> python AdvisIL/imagenet/build_datasets/imagenet_random_subsetter.py AdvisIL/imagenet/build_datasets/imagenet_random_subsetter2.cf
-
-> python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_random_2/train.lst
-
-* FLORA subset
-
-> python AdvisIL/imagenet/build_datasets/imagenet_subsetter.py AdvisIL/imagenet/build_datasets/imagenet_subsetter_flora.cf
-
-> python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_flora/train.lst 
-
-* FAUNA subset
-
-> python AdvisIL/imagenet/build_datasets/imagenet_subsetter.py AdvisIL/imagenet/build_datasets/imagenet_subsetter_fauna.cf
-
-> python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst & wait
-
-* FOOD subset
-
-> python AdvisIL/imagenet/build_datasets/imagenet_subsetter.py AdvisIL/imagenet/build_datasets/imagenet_subsetter_food.cf
-
-> python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_food/train.lst 
-
-__Sanity check__ 
-
-You must obtain the same mean and standard deviation values as in [`datasets_mean_std.txt`](./images_list_files/datasets_mean_std.txt) . 
+NB : __Sanity check__ . You must obtain the same mean and standard deviation values as in [`datasets_mean_std.txt`](./images_list_files/datasets_mean_std.txt) . 
 
 *Optional* : To create your own ImageNet subset, see the dedicated [tutorial](./imagenet/tutorial.md).
 
@@ -150,37 +142,37 @@ Please download the following datasets :
 * [Google Landmarks v2](https://github.com/cvdfoundation/google-landmark)
 * [iNaturalist 2018](https://github.com/visipedia/inat_comp/tree/master/2018)
 
-Note that in the case of iNaturalist, you do not need to download the data related to the semantic segmentation task of the original competition. 
+Note that in the case of iNaturalist, there is no need to download the data related to the semantic segmentation task of the original competition. Also, we provide the labels in our image lists (see subfolder [`images_list_files`](./images_list_files/)).
 
 __c) Note on reproductibility__ 
 
-To facilitate reproductibility, we provide in the `images_list_files` folder the _explicit list of images_ contained in each of the datasets we used. These lists are fed to the dataloaders when training or testing models.
+To facilitate reproductibility, we provide in the [`images_list_files`](./images_list_files/) folder the _explicit list of images_ contained in each of the datasets we used. These lists are fed to the dataloaders when training or testing models.
 
-For example, under [images_list_files/food101/train.lst](./images_list_files/food101/train.lst) you find the list of training images for the Food101 dataset. 
+For example, [images_list_files/food101/train.lst](./images_list_files/food101/train.lst) contains the list of training images for the Food101 dataset. 
 
-The file is structured as follows : 
-* The first line of the text file contains the root path to your local version of the dataset, and "-1" is used as flag for this root path. _Please change the root path to your own._
+An image list file is structured as follows : 
+* The first line of the text file contains the root path to your local version of the dataset, and "-1" is used as flag for this root path. _NB : Please change the root path to your own._
 > /home/data/efeillet/food101/images -1
 * All other lines are in the format "<class_name>/<image_name> <class_number>". See example below. 
 > apple_pie/1005649.jpg 87
 
-Note that this list actually contains more data than we actually used : in our experiments we only consider the first 100 classes of Food101, leaving out the last one. But we provide a complete split for the 101 classes in case you wish to use them all. 
+Note that some lists may contain more data than we actually used : e.g. in our experiments we only consider the first 100 classes of Food101, leaving out the last one. But we provide a complete split for the 101 classes in case you wish to use them all. 
 
 
 ### 2. Explore neural architectures
 
-We have made preliminary experiments to study the impact of architecture on the incremental performance of small convolutional neural networks. Therefore we have implemented a more flexible version of ResNet, MobileNetv2 and ShuffleNetv2 which allow to scale the architecture according to its width (number of convolutional filters) and depth (number of building blocks). These custom architectures are implemented [here](./models/).
+We have made preliminary experiments to study the impact of architecture on the incremental performance of small convolutional neural networks. Therefore we have implemented versions of ResNet, MobileNetv2 and ShuffleNetv2 which allow to scale each architecture according to its width (number of convolutional filters) and depth (number of building blocks). These custom architectures are implemented [here](./models/).
 
 To explore the architectures, run the following script. You will see the number of parameters corresponding to various scaling operations on 3 network types (ResNet18 with BasicBlocks, Mobilenetv2 and ShuffleNetv2).
 
 > python /AdvisIL/models/scaler.py
 
 
-### 3. Tune your hyperparameters 
+### 3. Tune hyperparameters 
 
-Before running the main experiments, we search for suitable hyperparameters for each neural architecture. 
+Before running the main experiments, we searched for suitable hyperparameters for each neural architecture. 
 
-_Prerequisite_ : We use ray-tune to perform hyperparameter tuning. The following command installs Ray and dependencies for Ray Tune.
+_Prerequisite_ : ray-tune. The following command installs Ray and dependencies for Ray Tune.
 
 > pip install -U "ray[tune]"  
 
@@ -188,44 +180,42 @@ To test your configuration, run this minimum working example with just 2 epochs.
 
 > sbatch /home/users/efeillet/incremental-scaler/hp_tuning/launsher_hp_tuner.sh 
 
-Tou can now perform a hyperparameter search for each backbone. We provide an example configuration file for each backbone.
+You can now perform a hyperparameter search for each backbone. We provide an example configuration file for each backbone.
 
-> python /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner.py /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner_mobilenet.cf
+> python /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner.py /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner_<mobilenet|resnet|shufflenet>.cf
 
-> python /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner.py /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner_resnet.cf
+Modify the paths to run more hyperparameter tuning experiments using other datasets. 
 
-> python /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner.py /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner_shufflenet.cf
-
-Feel free to run more hyperparameter tuning experiments with other datasets. 
-
-POUR MOI : 
+POUR MOI (TEST REPO): 
 
 > sbatch /home/users/efeillet/expe/AdvisIL/hp_tuning/launsher_hp_tuner_1.sh
 
 Similarily, launch `launsher_hp_tuner_2.sh` and `launsher_hp_tuner_3.sh`.
 
-This last step allows you to collect and analyse results.  A TRANSFORMER en NOTEBOOK pour avoir les images sur le serveur.
+This last step consists in collecting and visualizing results.  TODO A TRANSFORMER en NOTEBOOK pour avoir les images sur le serveur.
 
 > python /home/users/efeillet/incremental-scaler/hp_tuning/tuning_analyser.py
 
 
-### 4. Take a look at our scaling experiments
+### 4. Take a look at some preliminary scaling experiments
 
-We have run scaling experiments to propose a scaling heuristic in the case of a class-incremental learning task. In the following scripts, we perform scaling experiments using the LUCIR algorithm and the ??? dataset. Similar guidelines apply for other methods and datasets (see below for more details on each incremental learning algorithm). Similar observations apply too.
+We have run scaling experiments to propose a scaling heuristic in the case of a class-incremental learning task. 
+In the following scripts, we perform scaling experiments using the LUCIR algorithm and the ??? dataset. 
+Similar steps and observations apply for other methods and datasets (see below for more details on each incremental learning algorithm).
 
-1. Define settings --> output yaml files
+1. Define settings and get yaml files
 
 > python /home/users/efeillet/incremental-scaler/scaling/scaling_yaml_writer.py
 
 2. Build config files, folder structure and launcher files
 
-First, set paths in config_writer.cf, in particular the path to your input yaml file and the path to your output config and launcher files.
+First, set paths in `config_writer.cf`, in particular the path to your input yaml file and the path to your output config and launcher files.
 
-> python /home/users/efeillet/incremental-scaler/LUCIR/codes/config_writer.py /home/users/efeillet/incremental-scaler/LUCIR/configs/config_writer.cf
+> python /home/users/efeillet/incremental-scaler/LUCIR/codes/config_writer.py /home/users/efeillet/incremental-scaler/LUCIR/configs/config_writer.cf TODO changer chemins !!
 
-3. Run experiments using the launcher files
+3. Run scaling experiments using the launcher files
 
-_Recommendation_ : As this study involves numerous experiments, we uadvise you to split the experiments across several launcher files (manually), depending on your available computing resources and on the number of trials you wish to run for each particular experimental setting. Don't forget to give the jobs different names so that you can cancel them individually if needed. Also make your you name the log and error files so that you find them easily and so that they don't conflict with each other. 
+_Recommendation_ : As this study involves numerous experiments, we recommend to split the experiments across several launcher files (manually), depending on the available computing resources and on the number of trials you wish to run for each particular experimental setting. Make sure to give the jobs adapted names and to name the log and error files in such a way that they don't conflict with each other and can be found easily. 
 
 See example below. 
 
@@ -235,11 +225,11 @@ TO DO CHANGE PATHS and provide launcher file in sclaing subfolder
 
 4. Parse log files and plot results
 
-_Again, pay attention to the name of your output files so that you do not erase previous files incidentally by running the script on different data but with the same output name._
+_Reminder : Adapt the name of the output files._
 
 For reference, we provide log files with accuracies and visualisations [here](./scaling/logs/). 
 
-Running the following command, parse the log files. You obtain a `.csv` file containing the average incremental accuracy of each experiment.
+Running the following command, parse the log files. The output is a `.csv` file containing the average incremental accuracy of each experiment.
 
 > python /home/users/efeillet/incremental-scaler/scaling/log_parser.py /home/users/efeillet/incremental-scaler/scaling/log_parser.cf
 
@@ -251,12 +241,27 @@ TODO modifier chemins !
 
 ### 5. Get familiar with a few incremental learning algorithms 
 
-In our article, we report experiments with six examplar-free class-incremental learning algorithms : LUCIR, SPB-M, DeepSLDA, SIW, DeeSIL and FeTrIL.
+In our article, we report experiments with six recent class-incremental learning algorithms : LUCIR \[1\], SPB-M\[2\], DeepSLDA\[3\], SIW\[4\], DeeSIL\[5\] and FeTrIL\[6\]
+
+\[1\]Hou, Saihui, et al. "Learning a unified classifier incrementally via rebalancing." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2019. 
+
+\[2\]Wu, Guile, Shaogang Gong, and Pan Li. "Striking a balance between stability and plasticity for class-incremental learning." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2021.
+
+\[3\]Hayes, Tyler L., and Christopher Kanan. "Lifelong machine learning with deep streaming linear discriminant analysis." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops. 2020.
+
+\[4\]Belouadah, Eden, Adrian Popescu, and Ioannis Kanellos. "Initial classifier weights replay for memoryless class incremental learning."  British Machine Vision Conference (BMVC). 2020.
+
+\[5\]Belouadah, Eden, and Adrian Popescu. "DeeSIL: Deep-Shallow Incremental Learning." Proceedings of the European Conference on Computer Vision (ECCV) Workshops. 2018. 
+
+\[6\]Petit, Grégoire, et al. "FeTrIL: Feature Translation for Exemplar-Free Class-Incremental Learning." Proceedings of the Winter Conference on Applications of Computer Vision. 2023. 
+
 
 In this repository, we share implementations of these algorithms that, when needed, we adapted, so that they are able to handle : 
 - custom datasets (e.g. not just ImageNet-1k and CIFAR100)
 - custom neural architectures (e.g. not just ResNet18 and ResNet32)
 - custom incremental learning scenarios (e.g. not only scenarios with an equal repartition of classes across all incremental states, but also scenarios with more classes in the initial state). 
+- examplar-free scenarios : we do not use any memory buffer in our experiments.
+
 
 #### a. LUCIR 
 
