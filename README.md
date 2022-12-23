@@ -24,7 +24,7 @@ TODO list
 * parsing : ne pas publier -->nettoyer les dossiers
 * SPBM : TODO modif learning rate cf Slack !! à faire dans les 2 repos
 * modifier tous les noms de chemins dans le tuto, e.g. in config files : root --> /AdvisIL/...
-* traquer les éléments hard codés dans les fichiers, mettre en paramètres les chemins et autres noms. --> faire un search automatique "home/data" et "home/users" et "efeillet" pour vérifier 
+* traquer les éléments hard codés dans les fichiers, mettre en paramètres les chemins et autres noms. --> faire un search automatique "home/data" et "home/users" et "efeillet" pour vérifier ; TO DO CHANGE PATHS and RESOURCES names in launcher files
 * Content : to update at the end
 
 * ajouter dossier results avec les csv (moyennés) OK
@@ -52,17 +52,15 @@ _____
 
 __Outline__
 
-0. Check the requirements
-1. Get the datasets
-2. Explore neural architectures
-3. Tune hyperparameters
-4. Take a look at some preliminary scaling experiments
-5. Get familiar with a few incremental learning algorithms
-6. Compute reference experiments for AdvisIL using reference scenarios
-7. Compute recommendations for reference scenarios using AdvisIL 
-8. Compute recommendations for test scenarios using AdvisIL 
-9. Analyze the results
-10. Wrapping up 
+1. Check the requirements
+2. Get the datasets
+3. Explore neural architectures
+4. Tune hyperparameters
+5. Take a look at some preliminary scaling experiments
+6. Get familiar with a few incremental learning algorithms
+7. Compute reference experiments for AdvisIL using reference scenarios
+8. Compute recommendations using AdvisIL 
+9. Wrapping up 
 
 
 **Content of this repository** 
@@ -86,7 +84,7 @@ Subfolders
 * py37_requirements_linux64.txt : idem (Linux specific)
 
 
-### 0. Check the requirements
+### 1. Check the requirements
 
 We use Python deep learning framework PyTorch (`Python version 3.7`, `torch version 1.7.1+cu110`) in association with cuda (`CUDA Version: 11.4`).
 
@@ -101,7 +99,7 @@ To use this environment :
 > conda activate py37
 
 
-### 1. Get the datasets
+### 2. Get the datasets
 
 In our article we consider nine datasets. Six of them are sampled from ImageNet-21k. The others are Food101, Google Landmarks (v2) and iNaturalist (v2018).
 
@@ -119,15 +117,15 @@ For each ImageNet subset, run the following commands to (1) get the images in a 
 
 * RANDOM0, RANDOM1 and RANDOM2 subsets
 
-> python AdvisIL/imagenet/build_datasets/imagenet_random_subsetter.py AdvisIL/imagenet/build_datasets/imagenet_random_subsetter<0|1|2>.cf
+> python ./imagenet/build_datasets/imagenet_random_subsetter.py ./imagenet/build_datasets/imagenet_random_subsetter<0|1|2>.cf
 
-> python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_random_<0|1|2>/train.lst 
+> python ./images_list_files/compute_dataset_mean_from_images_list.py ./images_list_files/train100/imagenet_random_<0|1|2>/train.lst 
 
 * FLORA, FAUNA and FOOD subsets
 
-> python AdvisIL/imagenet/build_datasets/imagenet_subsetter.py AdvisIL/imagenet/build_datasets/imagenet_subsetter_<fauna|flora|food>.cf
+> python ./imagenet/build_datasets/imagenet_subsetter.py ./imagenet/build_datasets/imagenet_subsetter_<fauna|flora|food>.cf
 
-> python /home/users/efeillet/images_list_files/compute_dataset_mean_from_images_list.py /home/users/efeillet/images_list_files/train100/imagenet_<fauna|flora|food>/train.lst 
+> python ./images_list_files/compute_dataset_mean_from_images_list.py ./images_list_files/train100/imagenet_<fauna|flora|food>/train.lst 
 
 
 NB : __Sanity check__ . You must obtain the same mean and standard deviation values as in [`datasets_mean_std.txt`](./images_list_files/datasets_mean_std.txt) . 
@@ -151,24 +149,24 @@ To facilitate reproductibility, we provide in the [`images_list_files`](./images
 For example, [images_list_files/food101/train.lst](./images_list_files/food101/train.lst) contains the list of training images for the Food101 dataset. 
 
 An image list file is structured as follows : 
-* The first line of the text file contains the root path to your local version of the dataset, and "-1" is used as flag for this root path. _NB : Please change the root path to your own._
-> /home/data/efeillet/food101/images -1
+* The first line of the text file should contain the root path to your local version of the dataset, and "-1" is used as flag for this root path. _NB : Please change the root path to your own._
+> <path_to_the_dataset>/food101/images -1
 * All other lines are in the format "<class_name>/<image_name> <class_number>". See example below. 
 > apple_pie/1005649.jpg 87
 
 Note that some lists may contain more data than we actually used : e.g. in our experiments we only consider the first 100 classes of Food101, leaving out the last one. But we provide a complete split for the 101 classes in case you wish to use them all. 
 
 
-### 2. Explore neural architectures
+### 3. Explore neural architectures
 
 We have made preliminary experiments to study the impact of architecture on the incremental performance of small convolutional neural networks. Therefore we have implemented versions of ResNet, MobileNetv2 and ShuffleNetv2 which allow to scale each architecture according to its width (number of convolutional filters) and depth (number of building blocks). These custom architectures are implemented [here](./models/).
 
 To explore the architectures, run the following script. You will see the number of parameters corresponding to various scaling operations on 3 network types (ResNet18 with BasicBlocks, Mobilenetv2 and ShuffleNetv2).
 
-> python /AdvisIL/models/scaler.py
+> python /./models/scaler.py
 
 
-### 3. Tune hyperparameters 
+### 4. Tune hyperparameters 
 
 Before running the main experiments, we searched for suitable hyperparameters for each neural architecture. 
 
@@ -178,26 +176,26 @@ _Prerequisite_ : ray-tune. The following command installs Ray and dependencies f
 
 To test your configuration, run this minimum working example with just 2 epochs.
 
-> sbatch /home/users/efeillet/incremental-scaler/hp_tuning/launsher_hp_tuner.sh 
+> python ./hp_tuning/hp_tuner.py ./hp_tuning/hp_tuner_test.cf
 
 You can now perform a hyperparameter search for each backbone. We provide an example configuration file for each backbone.
 
-> python /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner.py /home/users/efeillet/incremental-scaler/hp_tuning/hp_tuner_<mobilenet|resnet|shufflenet>.cf
+> python ./hp_tuning/hp_tuner.py ./hp_tuning/hp_tuner_<mobilenet|resnet|shufflenet>.cf
 
 Modify the paths to run more hyperparameter tuning experiments using other datasets. 
 
 POUR MOI (TEST REPO): 
 
-> sbatch /home/users/efeillet/expe/AdvisIL/hp_tuning/launsher_hp_tuner_1.sh
+> sbatch /home/users/efeillet/expe/./hp_tuning/launsher_hp_tuner_1.sh
 
 Similarily, launch `launsher_hp_tuner_2.sh` and `launsher_hp_tuner_3.sh`.
 
 This last step consists in collecting and visualizing results.  TODO A TRANSFORMER en NOTEBOOK pour avoir les images sur le serveur.
 
-> python /home/users/efeillet/incremental-scaler/hp_tuning/tuning_analyser.py
+> python ./hp_tuning/tuning_analyser.py
 
 
-### 4. Take a look at some preliminary scaling experiments
+### 5. Take a look at some preliminary scaling experiments
 
 We have run scaling experiments to propose a scaling heuristic in the case of a class-incremental learning task. 
 In the following scripts, we perform scaling experiments using the LUCIR algorithm and the ??? dataset. 
@@ -205,23 +203,17 @@ Similar steps and observations apply for other methods and datasets (see below f
 
 1. Define settings and get yaml files
 
-> python /home/users/efeillet/incremental-scaler/scaling/scaling_yaml_writer.py
+> python ./scaling/scaling_yaml_writer.py
 
 2. Build config files, folder structure and launcher files
 
-First, set paths in `config_writer.cf`, in particular the path to your input yaml file and the path to your output config and launcher files.
+First, set paths and other parameters in `config_writer.cf`, in particular the path to your input yaml file and the path to your output config and launcher files.
 
-> python /home/users/efeillet/incremental-scaler/LUCIR/codes/config_writer.py /home/users/efeillet/incremental-scaler/LUCIR/configs/config_writer.cf TODO changer chemins !!
+> python ./LUCIR/codes/config_writer.py ./LUCIR/configs/config_writer.cf 
 
 3. Run scaling experiments using the launcher files
 
 _Recommendation_ : As this study involves numerous experiments, we recommend to split the experiments across several launcher files (manually), depending on the available computing resources and on the number of trials you wish to run for each particular experimental setting. Make sure to give the jobs adapted names and to name the log and error files in such a way that they don't conflict with each other and can be found easily. 
-
-See example below. 
-
-> /home/data/efeillet/expe/scaling/imagenet_fauna/imagenet_fauna_lucir_equi_s10/unique/LUCIR/u_launcher_LUCIR_1.sh
-
-TO DO CHANGE PATHS and provide launcher file in sclaing subfolder
 
 4. Parse log files and plot results
 
@@ -231,15 +223,14 @@ For reference, we provide log files with accuracies and visualisations [here](./
 
 Running the following command, parse the log files. The output is a `.csv` file containing the average incremental accuracy of each experiment.
 
-> python /home/users/efeillet/incremental-scaler/scaling/log_parser.py /home/users/efeillet/incremental-scaler/scaling/log_parser.cf
+> python ./scaling/log_parser.py ./scaling/configs/log_parser_<dataset>.cf
 
 Finally, plot the average incremental accuracy for each architecture (one plot per backbone). 
 
-> python AdvisIL/scaling/WACV_scaling_plots.py
+> python ./scaling/WACV_scaling_plots.py
 
-TODO modifier chemins ! 
 
-### 5. Get familiar with a few incremental learning algorithms 
+### 6. Get familiar with a few incremental learning algorithms 
 
 In our article, we report experiments with six recent class-incremental learning algorithms : LUCIR \[1\], SPB-M\[2\], DeepSLDA\[3\], SIW\[4\], DeeSIL\[5\] and FeTrIL\[6\]
 
@@ -270,7 +261,7 @@ learning algorithm with memory of past examples. In practice, as we focus on exa
 
 Example code for launching LUCIR.
 
-> python /home/users/efeillet/incremental-scaler/LUCIR/codes/main.py /home/users/efeillet/incremental-scaler/LUCIR/configs/LUCIR.cf
+> python ./LUCIR/codes/main.py ./LUCIR/configs/LUCIR.cf
 
 _Useful tip: For convenience, we reuse the first state obtained by running LUCIR for experiments which use a fixed feature extractor, namely DeepSLDA, SIW, DeeSIL and FeTrIL._ 
 
@@ -282,7 +273,7 @@ We use the SPB-M version, which uses a data augmentation procedure based on imag
 
 Example code for launching SPB-M.
 
-> python /home/users/efeillet/incremental-scaler/SPBM/codes/main.py /home/users/efeillet/incremental-scaler/SPBM/configs/SPBM.cf
+> python ./SPBM/codes/main.py ./SPBM/configs/SPBM.cf
 
 #### c. DeepSLDA 
 
@@ -293,16 +284,16 @@ Our implementation is based on the [original repository](https://github.com/tyle
 Our implementation is based on the [original repository](https://github.com/EdenBelouadah/class-incremental-learning/tree/master/siw) of Eden Belouadah.
 
 i - First batch
-> python /home/users/efeillet/incremental-scaler/siw/FT/codes/scratch.py /home/users/efeillet/incremental-scaler/siw/FT/configs/scratch.cf
+> python ./SIW/FT/codes/scratch.py ./SIW/FT/configs/scratch.cf
 
 ii - Fine-tuning without memory
-> python /home/users/efeillet/incremental-scaler/siw/FT/codes/no_mem_ft.py /home/users/efeillet/incremental-scaler/siw/FT/configs/no_mem_ft.cf
+> python ./SIW/FT/codes/no_mem_ft.py ./SIW/FT/configs/no_mem_ft.cf
 
 iii - Feature extraction
-> python /home/users/efeillet/incremental-scaler/siw/FT/codes/features_extraction.py /home/users/efeillet/incremental-scaler/siw/FT/configs/features_extraction.cf
+> python ./SIW/FT/codes/features_extraction.py ./SIW/FT/configs/features_extraction.cf
 
 iv - Weight correction using standardization of initial weights
-> python /home/users/efeillet/incremental-scaler/siw/FT/codes/inFT_siw.py /home/users/efeillet/incremental-scaler/siw/FT/configs/inFT_siw.cf
+> python ./SIW/FT/codes/inFT_siw.py ./SIW/FT/configs/inFT_siw.cf
 
 #### e. DeeSIL 
 
@@ -314,9 +305,9 @@ See our [dedicated repository](https://github.com/GregoirePetit/DeeSIL).
 
 Our implementation of FeTrIL is shared [here](https://github.com/GregoirePetit/FeTrIL).
 
-!!! dossier ancien nom MobIL --> renommé en FeTrIL
+NB : you might find references to "MobIL" in the code, it is actually the same as FeTrIL.
 
-### 6. Compute reference experiments for AdvisIL using reference scenarios
+### 7. Compute reference experiments for AdvisIL using reference scenarios
 
 1. Generate yaml files with your hyperparameters for each backbone type
 
@@ -326,23 +317,23 @@ Don't forget to modify the source and destination folders in the config files. Y
 
 Reference points
 
-> python /home/users/efeillet/incremental-scaler/AdvisIL/yaml_writer.py
+> python ./config_writer/yaml_writer.py
 
 Test points
 
-> python /home/users/efeillet/incremental-scaler/AdvisIL/yaml_writer_testsets.py
+> python ./config_writer/yaml_writer_testsets.py
 
 For debugging purposes, use this version that creates quicker experiments : 
 
-> python /home/users/efeillet/incremental-scaler/AdvisIL/yaml_writer_test.py
+> python ./config_writer/yaml_writer_test.py
 
 2. Generate folders, config files and launcher files for each method
 
-> python /home/users/efeillet/incremental-scaler/AdvisIL/config_writer_lucir.py /home/users/efeillet/incremental-scaler/AdvisIL/config_writer_lucir.cf
+> python ./config_writer/config_writer_lucir.py ./config_writer/config_writer_lucir.cf
 
-> python /home/users/efeillet/incremental-scaler/AdvisIL/config_writer_spbm.py /home/users/efeillet/incremental-scaler/AdvisIL/config_writer_spbm.cf
+> python ./config_writer/config_writer_spbm.py ./config_writer/config_writer_spbm.cf
 
-> python /home/users/efeillet/incremental-scaler/AdvisIL/config_writer_siw.py /home/users/efeillet/incremental-scaler/AdvisIL/config_writer_siw.cf
+> python ./config_writer/config_writer_siw.py ./config_writer/config_writer_siw.cf
 
 Do the same thing for test experiments. 
 
@@ -353,23 +344,16 @@ A typical arborescence is the following : TO ADD (screenshot ?)
 4. Parse log files and save results in a structured format
 
 
-### 7. Compute recommendations for reference scenarios using AdvisIL
+### 8. Compute recommendations using AdvisIL
 
-TO ADD : csv with parsed results for ref and test. 
+Parsed results for reference configurations and for test configurations are provided in csv format [here](./results/). 
 
-TO ADD : code with ranking reco. --> folder `reco`
+Compute the recommendations and reproduce the results of the paper by running the following command.
 
-### 8. Compute recommendations for test scenarios using AdvisIL 
+> python ./reco/advisil_reco_vote.py ./results/ref_configs.csv ./results/test_configs.csv 
 
-Do the same thing for test experiments. 
 
-### 9. Analyze the results
-
-Last but not least, plot a few visualizations
-
-see if necessary/easy.
-
-### 10. Wrapping up
+### 9. Wrapping up
 
 In this repository, we provide a detailed tutorial to :
 - reproduce the results presented in our WACV 2023 article "AdvisIL - A Class-Incremental Learning Advisor",
