@@ -8,14 +8,6 @@ import pprint
 pp = pprint.PrettyPrinter(indent=4)
 
 
-"""
-compares the performance of:
--individual methods - using the same method+backbone combination for all incremental configurations 
--oracle - selecting the best method+backbong combination for each incremental configuration
-USAGE EXAMPLE:
-python3 advisil_reco_vote.py reco/ref_configs.csv reco/test_configs.csv > advisil_reco_vote.log
-"""
-
 ref_log = sys.argv[1]
 test_log = sys.argv[2]
 
