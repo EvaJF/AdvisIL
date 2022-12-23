@@ -446,7 +446,7 @@ with warnings.catch_warnings(record=True) as warn_list:
             #print("\nAfter : ", tg_feature_model)
             num_features = tg_model.fc.in_features
 
-            ## Herding
+            ## Herding - but here we do not use examplars
             #print('Updating exemplar set...')
             #first_index=B+(last_iter-1)*P
             #if first_index<B:
