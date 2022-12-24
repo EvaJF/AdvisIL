@@ -1,6 +1,7 @@
 [result_analyser.py]
-root_dir = /home/users/efeillet/expe/results/inat/inat_s10_k0
-dataset = imagenet_random_0
+absolute_path = /home/users/efeillet
+root_dir = %(absolute_path)s/test/inat/inat_s10_k0
+dataset = inat
 ntot_states = 10
 ntot_classes = 100
 epochs_init = 70

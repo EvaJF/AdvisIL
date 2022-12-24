@@ -29,7 +29,7 @@ Choose a concept and get the classes subsumed by this concept in WordNet's hiera
 
 You obtain a tree structure in a text file.
 
-NB : if you get error `Search too large. Narrow search and try again...`, you might need to choose a concept lower in the hierarchy. Otherwise, the issue can be fixed by manually setting a larger buffer space in wordnet source code (see ???).
+NB : if you get error `Search too large. Narrow search and try again...`, you might need to choose a concept lower in the hierarchy. Otherwise, the issue can be fixed by manually setting a larger buffer space in wordnet source code.
 
 
 4. __Filter classes according to their number of images__ 

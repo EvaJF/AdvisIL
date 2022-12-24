@@ -27,12 +27,6 @@ def normalize_l2(v):
         return v
     return v / norm
 
-"""
-python /home/users/apopescu/MobIL/train_mobil_lucir.py 1.0 0.0001 100 food101 50 5 /home/data/didi/ST/features/ /home/data/didi/ST/svms/
-
-
-"""
-
 
 #provide the following arguments to facilitate paralellization
 regul = sys.argv[1] #value of the regularization parameter for the SVMs

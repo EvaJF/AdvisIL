@@ -1,55 +1,54 @@
 [main.py] 
+absolute_path = /home/users/efeillet
 ############################### ARCHITECTURE
 backbone = resnetBasic
 width_mult = 1.0
 depth_mult = 1.0
-############################### FIRST STATE 
-first_train_batch_size       = 128 
-first_base_lr                = 0.1 
-first_lr_strat               = 30, 60 
-first_lr_factor              = 0.1 
-first_custom_weight_decay    = 0.0001 
-first_epochs                 = 2 
-############################### SUBSEQUENT STATES 
-subsequent_train_batch_size = 64 
-subsequent_base_lr_features_extractor = 0.001 
-subsequent_base_lr_classifier = 0.01 
-subsequent_lr_strat = 30 
-subsequent_lr_factor = 0.1 
-subsequent_custom_weight_decay = 0.0001 
-subsequent_epochs = 2 
-############################### 
-normalization_dataset_name = inat 
-train_file_path = /home/users/efeillet/images_list_files/train100/inat/train.lst 
-test_file_path = /home/users/efeillet/images_list_files/train100/inat/test.lst 
-############################### 
-custom_momentum = 0.9 
-test_batch_size = 32 
-eval_batch_size = 32 
-num_classes = 30 
-num_workers = 8 
+############################## DATA
+normalization_dataset_name = cifar100
+train_batch_size       = 64
+test_batch_size        = 64
+eval_batch_size        = 128
+base_lr                = 0.1
+lr_strat               = 30, 50
+lr_factor              = 0.1
+custom_weight_decay    = 0.0001
+custom_momentum        = 0.9
+train_file_path = %(absolute_path)s/images_list_files/train100/cifar100/train.lst
+test_file_path = %(absolute_path)s/images_list_files/train100/cifar100/test.lst 
+############################### EXPE
+num_classes = 30
+num_workers = 4
 B = 10
 P = 10
 last_batch_number = 3 
-memory_size = 0 
-output_dir = /home/users/efeillet/expe/test
-######################### 
-ft_epochs = 20 
-ft_base_lr = 0.001 
-ft_lr_strat = 10 
-ft_flag = 2 
-############## 
-datasets_mean_std_file_path = /home/users/efeillet/images_list_files/datasets_mean_std.txt
-nb_runs = 1 
-rs_ratio = 0.0 
-resume = False 
-T = 2 
-beta=0.25 
-random_seed=-1 
-dist = 0.5 
-K = 2 
-lw_mr = 1.0 
-lw_ms = 1.0 
-lamda = 10.0 
-adapt_lamda = True 
-exists_val = False 
+memory_size = 0
+output_dir = %(absolute_path)s/test
+first_epochs = 2 
+subsequent_epochs = 2 
+############################### LUCIR
+imprint_weights = True
+mimic_score = True
+less_forget = True
+mr_loss = True
+####################
+cb_finetune = False
+ft_epochs = 30
+ft_base_lr = 0.001
+ft_lr_strat = 10,20
+ft_flag = 2
+################### do not change
+datasets_mean_std_file_path = %(absolute_path)s/images_list_files/datasets_mean_std.txt
+nb_runs = 1
+rs_ratio = 0.0
+resume = False
+T = 2
+beta=0.25
+random_seed=-1
+dist = 0.5
+K = 2
+lw_mr = 1.0
+lw_ms = 1.0
+lamda = 10.0
+adapt_lamda = True
+exists_val = False

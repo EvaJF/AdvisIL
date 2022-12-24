@@ -1,0 +1,9 @@
+[inFT_siw.py]
+images_list_files_path = /home/users/efeillet/images_list_files/train100/
+ft_feat_scores_path = /home/users/efeillet/expe/results/inat/inat_s10/nomemft_models/weight_bias/
+ft_weights_dir = /home/users/efeillet/expe/results/inat/inat_s10/nomemft_models/weight_bias/
+K = 0
+P = 10
+S = 10
+dataset = inat
+batch_size = 256

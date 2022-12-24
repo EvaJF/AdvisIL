@@ -1,4 +1,7 @@
 # Initial-Classifier-Weights-Replay-for-Memoryless-Class-Incremental-Learning
+
+For more details, please refer to the [original repository](https://github.com/EdenBelouadah/class-incremental-learning/tree/master/siw). 
+
 ## Abstract
 Incremental Learning (IL) is useful when artificial systems need to deal with streams of data and do not have access to all data at all times.
 The most challenging setting requires a constant complexity of the deep model and an incremental model update without access to a bounded memory of past data.

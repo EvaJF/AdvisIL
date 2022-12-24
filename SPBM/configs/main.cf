@@ -1,5 +1,4 @@
 [main.py] 
-absolute_path = /home/users/efeillet
 ############################### ARCHITECTURE
 backbone = resnetBasic
 width_mult = 1.0
@@ -10,7 +9,7 @@ first_base_lr                = 0.1
 first_lr_strat               = 30, 60 
 first_lr_factor              = 0.1 
 first_custom_weight_decay    = 0.0001 
-first_epochs                 = 2 
+first_epochs                 = 80 
 ############################### SUBSEQUENT STATES 
 subsequent_train_batch_size = 64 
 subsequent_base_lr_features_extractor = 0.001 
@@ -18,22 +17,22 @@ subsequent_base_lr_classifier = 0.01
 subsequent_lr_strat = 30 
 subsequent_lr_factor = 0.1 
 subsequent_custom_weight_decay = 0.0001 
-subsequent_epochs = 2 
+subsequent_epochs = 50 
 ############################### 
-normalization_dataset_name = inat 
-train_file_path = %(absolute_path)s/images_list_files/train100/inat/train.lst 
-test_file_path = %(absolute_path)s/images_list_files/train100/inat/test.lst  
+normalization_dataset_name = cifar100 
+train_file_path = /home/users/efeillet/images_list_files/train100/cifar100/train.lst 
+test_file_path = /home/users/efeillet/images_list_files/train100/cifar100/test.lst 
 ############################### 
 custom_momentum = 0.9 
 test_batch_size = 32 
 eval_batch_size = 32 
-num_classes = 10 
+num_classes = 100 
 num_workers = 8 
-B = 5 
-P = 5 
-last_batch_number = 2 
+B = 10
+P = 10
+last_batch_number = 10 
 memory_size = 0 
-output_dir = %(absolute_path)s/test
+output_dir = /home/users/efeillet/expe/test
 ############ 
 em_loss = True 
 rot_em_loss = True 
@@ -43,7 +42,7 @@ ft_base_lr = 0.001
 ft_lr_strat = 10 
 ft_flag = 2 
 ############## 
-datasets_mean_std_file_path = %(absolute_path)s/images_list_files/datasets_mean_std.txt 
+datasets_mean_std_file_path = /home/users/efeillet/images_list_files/datasets_mean_std.txt
 nb_runs = 1 
 rs_ratio = 0.0 
 resume = False 

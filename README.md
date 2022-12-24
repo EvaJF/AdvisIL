@@ -21,12 +21,17 @@ Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "Ad
 _____
 TODO list
 
+* 1 - tester pas à pas tous les scripts en suivant le tuto
+* 2 - rm --cached les fichiers inutiles 
+* 3 - supprimer tous les chemins  --> vérifier avec grep -r "efeillet" ./subfolder/ ou grep "efeillet" ./*/*.py ou .cf 
+
 * parsing : ne pas publier -->nettoyer les dossiers
 * SPBM : TODO modif learning rate cf Slack !! à faire dans les 2 repos
 * modifier tous les noms de chemins dans le tuto, e.g. in config files : root --> /AdvisIL/...
 * traquer les éléments hard codés dans les fichiers, mettre en paramètres les chemins et autres noms. --> faire un search automatique "home/data" et "home/users" et "efeillet" pour vérifier ; TO DO CHANGE PATHS and RESOURCES names in launcher files
 * Content : to update at the end
 
+* enlever les chemins en dur du tuto OK
 * ajouter dossier results avec les csv (moyennés) OK
 * reco : modifier avec code Adrian OK
 * captions folder --> image principe advisil OK
@@ -79,7 +84,6 @@ Subfolders
 * scaling : scaling experimetns and utility functions 
 * SIW : incremental learning algorithm 
 * SPBM : incremental learning algorithm 
-* (test : to test the repo)
 * py37_requirements.txt : requirements file to reproduce the environment
 * py37_requirements_linux64.txt : idem (Linux specific)
 
@@ -163,7 +167,7 @@ We have made preliminary experiments to study the impact of architecture on the 
 
 To explore the architectures, run the following script. You will see the number of parameters corresponding to various scaling operations on 3 network types (ResNet18 with BasicBlocks, Mobilenetv2 and ShuffleNetv2).
 
-> python /./models/scaler.py
+> python ./models/scaler.py
 
 
 ### 4. Tune hyperparameters 
@@ -184,13 +188,7 @@ You can now perform a hyperparameter search for each backbone. We provide an exa
 
 Modify the paths to run more hyperparameter tuning experiments using other datasets. 
 
-POUR MOI (TEST REPO): 
-
-> sbatch /home/users/efeillet/expe/./hp_tuning/launsher_hp_tuner_1.sh
-
-Similarily, launch `launsher_hp_tuner_2.sh` and `launsher_hp_tuner_3.sh`.
-
-This last step consists in collecting and visualizing results.  TODO A TRANSFORMER en NOTEBOOK pour avoir les images sur le serveur.
+The next step consists in collecting and visualizing results.  
 
 > python ./hp_tuning/tuning_analyser.py
 
@@ -198,7 +196,7 @@ This last step consists in collecting and visualizing results.  TODO A TRANSFORM
 ### 5. Take a look at some preliminary scaling experiments
 
 We have run scaling experiments to propose a scaling heuristic in the case of a class-incremental learning task. 
-In the following scripts, we perform scaling experiments using the LUCIR algorithm and the ??? dataset. 
+In the following scripts, we provide examples of scaling experiments using the LUCIR algorithm and the datasets iNaturalist and imagenet_random_0. 
 Similar steps and observations apply for other methods and datasets (see below for more details on each incremental learning algorithm).
 
 1. Define settings and get yaml files

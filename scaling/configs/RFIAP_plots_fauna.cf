@@ -1,0 +1,13 @@
+[RFIAP_plots.py]
+##########################
+save_dir = /home/data/efeillet/expe/scaling
+##########################
+input_csv = /home/data/efeillet/expe/scaling/fauna_avg_results_scaling.csv
+dataset = imagenet_fauna
+prefix = fauna_
+##########################
+ntot_states = 10
+ntot_classes = 100
+epochs_init = 70
+epochs_incr = 70
+algo = lucir

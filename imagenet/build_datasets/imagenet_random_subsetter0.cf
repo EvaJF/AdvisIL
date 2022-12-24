@@ -1,10 +1,12 @@
 [imagenet_random_subsetter.py]
+absolute_path = /home/users/efeillet/AdvisIL
+absolute_path_images = /home/data/efeillet
 ################################ input
-input_path = /home/users/efeillet/expe/imagenet/random_classes_0.txt  
+input_path = %(absolute_path)s/imagenet/class_lists/random_classes_0.txt
 path_to_tars = /home/data/dataset/ImageNet/tars  
 ################################ output
-images_list_files_path = /home/users/efeillet/images_list_files/train100/imagenet_random_0/  
-root_image_dir = /home/data/efeillet/imagenet_random_0/  
+images_list_files_path = %(absolute_path)s/images_list_files/train100/imagenet_random_0/  
+root_image_dir = %(absolute_path_images)s/imagenet_random_0/  
 ################################ dataset
 num_classes = 100 
 num_train = 340 

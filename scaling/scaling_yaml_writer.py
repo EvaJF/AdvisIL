@@ -1,12 +1,15 @@
 import os
 
-destination_path = "/home/data/efeillet/expe/scaling/yaml_files"
+curr_dir = os.path.realpath(os.path.dirname(__file__)) # .../AdvisIL/scaling
+image_list_dir = os.path.join(('/').join(curr_dir.split('/')[:-1]),"images_list_files")
+destination_path = os.path.join(curr_dir, "yaml_files")
+
 #state_list = [("equi_s4", 4, 25, 25), ("equi_s10", 10, 10, 10), ("equi_s20", 20, 5, 5), ("semi_s3", 3, 50, 25), ("semi_s6", 6, 50, 10), ("semi_s11", 11, 50, 5)]
-state_list = [("equi_s10", 10, 10, 10)]
+state_list = [("equi_s10", 10, 10, 10)] # example
 
 for dataset in ["imagenet_random_0",  "imagenet_fauna"]: # "imagenet_flora", "imagenet_food", "imagenet_random_1", "imagenet_random_2",
     for (_, last_batch_number, B, P) in state_list : 
-        config_dic = {"dataset" : dataset, "last_batch_number":last_batch_number, "B":B, "P":P}
+        config_dic = {"dataset" : dataset, "last_batch_number":last_batch_number, "B":B, "P":P, "images_list_dir": image_list_dir}
         i=0
         text=""
         ### RESNET ###
@@ -24,9 +27,9 @@ for dataset in ["imagenet_random_0",  "imagenet_fauna"]: # "imagenet_flora", "im
   width_mult : {w} # width multiplier
   depth_mult : {d} # depth multiplier
   normalization_dataset_name : {dataset} # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/{dataset}/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/{dataset}/test.lst  
+  datasets_mean_std_file_path : "{images_list_dir}/datasets_mean_std.txt"
+  train_file_path : {images_list_dir}/train100/{dataset}/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : {images_list_dir}/train100/{dataset}/test.lst  
   B : {B} # number of classes in the first, non-incremental state
   P : {P} # number of classes per incremental state
   last_batch_number : {last_batch_number}
@@ -49,9 +52,9 @@ for dataset in ["imagenet_random_0",  "imagenet_fauna"]: # "imagenet_flora", "im
   width_mult : {w} # width multiplier
   depth_mult : {d} # depth multiplier
   normalization_dataset_name : {dataset} # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/{dataset}/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/{dataset}/test.lst  
+  datasets_mean_std_file_path : "{images_list_dir}/datasets_mean_std.txt"
+  train_file_path : {images_list_dir}/train100/{dataset}/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : {images_list_dir}/train100/{dataset}/test.lst  
   B : {B} # number of classes in the first, non-incremental state
   P : {P} # number of classes per incremental state
   last_batch_number : {last_batch_number}
@@ -74,9 +77,9 @@ for dataset in ["imagenet_random_0",  "imagenet_fauna"]: # "imagenet_flora", "im
   width_mult : {w} # width multiplier
   depth_mult : {d} # depth multiplier
   normalization_dataset_name : {dataset} # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/{dataset}/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/{dataset}/test.lst  
+  datasets_mean_std_file_path : "{images_list_dir}/datasets_mean_std.txt"
+  train_file_path : {images_list_dir}/train100/{dataset}/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : {images_list_dir}/train100/{dataset}/test.lst  
   B : {B} # number of classes in the first, non-incremental state
   P : {P} # number of classes per incremental state
   last_batch_number : {last_batch_number}

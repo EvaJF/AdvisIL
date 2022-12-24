@@ -1,6 +1,6 @@
 [log_parser.py]
-root_dir = /home/data/efeillet/expe/scaling/imagenet_random_0/imagenet_random_0_lucir_equi_s10/unique/LUCIR/logs
-save_dir = /home/data/efeillet/expe/scaling
+root_dir = 
+save_dir = 
 prefix = random0_
 ntot_classes_ref = 100
 epochs_init_ref = 70

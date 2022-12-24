@@ -2,10 +2,9 @@ from __future__ import division
 import torchvision.transforms as transforms
 import sys, os, warnings, time
 import numpy as np
-#sys.path.insert(0, "/home/gregoire/code/class-incremental-learning/siw/utils")
 
 from MyImageFolder import ImagesListFileFolder
-import torch as th
+import torch 
 
 
 if len(sys.argv) != 2:
@@ -27,9 +26,9 @@ with warnings.catch_warnings(record=True) as warn_list:
     print("Number of classes = " + str(num_classes))
     print("Training-set size = " + str(len(train_dataset)))
 
-    dataloader = th.utils.data.DataLoader(train_dataset, batch_size=1, shuffle=False, num_workers=24)
-    mean = th.zeros(3).cuda(0)
-    std = th.zeros(3).cuda(0)
+    dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=1, shuffle=False, num_workers=24)
+    mean = torch.zeros(3).cuda(0)
+    std = torch.zeros(3).cuda(0)
     print('==> Computing mean and std..')
     cpt = 0
     for inputs, targets in dataloader:

@@ -4,8 +4,8 @@
 import sys,os
 
 """
-Script for preparing an imagenet food dataset which includes 1000 classes.
-python3 prepare_food_dataset.py files/wn_food_tree.txt files/imagenet_leaves.lst files/synsets_words_size_map.txt 350 files/food_over_350.txt
+Example script for preparing an imagenet food dataset which includes 1000 classes.
+python ./imagenet/prepare_food_dataset.py ./wordnet_tree_files/food.tree ./imagenet/imagenet_leaves.lst ./imagenet/synsets_words_size_map.txt 350 ./imagenet_food_example/food_over_350.txt
 """
 
 wn_food_path = sys.argv[1] #path to the full wordnet food subset

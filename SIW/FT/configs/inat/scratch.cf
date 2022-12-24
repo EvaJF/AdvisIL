@@ -1,0 +1,32 @@
+[scratch.py]
+normalization_dataset_name = inat
+datasets_mean_std_file_path = /home/users/efeillet/images_list_files/datasets_mean_std.txt
+#######
+num_workers = 1
+gpu = 0
+####### 
+backbone = resnetBasic
+width_mult = 1.0
+depth_mult = 1.0
+########
+old_batch_size= 128
+new_batch_size= 32
+val_batch_size= 128
+#######
+starting_epoch=0
+num_epochs=120 
+#######
+lr_decay=0.1
+lr=0.1
+momentum=0.9
+weight_decay=0.0005
+patience=60
+#######
+train_file_path= /home/users/efeillet/images_list_files/train100/inat/train.lst
+val_file_path= /home/users/efeillet/images_list_files/train100/inat/test.lst
+max_class = 9
+#######
+model_load_path = None
+models_save_dir = /home/users/efeillet/expe/results/
+num_batches = 10
+saving_intermediate_models = False

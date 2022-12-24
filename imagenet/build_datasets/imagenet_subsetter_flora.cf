@@ -1,10 +1,12 @@
 [imagenet_subsetter.py]
+absolute_path = /home/users/efeillet/AdvisIL
+absolute_path_images = /home/data/efeillet
 ################################ input
-input_path = /home/users/efeillet/expe/imagenet/flora_over_600.txt  
+input_path = %(absolute_path)s/imagenet/class_lists/flora_over_600.txt  
 path_to_tars = /home/data/dataset/ImageNet/tars  
 ################################ output
-images_list_files_path = /home/users/efeillet/images_list_files/train100/imagenet_flora/  
-root_image_dir = /home/data/efeillet/imagenet_flora/  
+images_list_files_path = %(absolute_path)s/images_list_files/train100/imagenet_flora/  
+root_image_dir = %(absolute_path_images)s/imagenet_flora/  
 ################################ dataset
 num_classes = 100 
 num_train = 340 

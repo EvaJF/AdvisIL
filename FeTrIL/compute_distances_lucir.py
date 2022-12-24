@@ -6,9 +6,6 @@ from sklearn.metrics import pairwise_distances
 import sys
 from multiprocessing import Pool
 
-"""
-python /home/users/apopescu/MobIL/compute_distances_lucir.py 100 food101 50 5 /home/data/didi/ST/features/
-"""
 
 nb_classes = int(sys.argv[1]) #number of classes in TOTAL
 dataset = sys.argv[2]
@@ -17,23 +14,6 @@ il_states = int(sys.argv[4]) #initialement on donnerait 3, ici on donne 4
 feat_root= sys.argv[5]
 s = il_states-1
 
-#hard-coding for food-1000 and ilsvrc-500 pretrained features
-
-
-"""
-if "food1000" in feat_root:
-    train_data_path = f"{feat_root}/{dataset}/b1000/train/"
-elif "ils500" in feat_root:
-    train_data_path = f"{feat_root}/{dataset}/b500/train/"
-elif "imn1000" in feat_root:
-    train_data_path = f"{feat_root}/{dataset}/b1000/train/"
-elif "imn2000" in feat_root:
-    train_data_path = f"{feat_root}/{dataset}/b2000/train/"
-elif "imn4000" in feat_root:
-    train_data_path = f"{feat_root}/{dataset}/b4000/train/"
-elif "imn6000" in feat_root:
-    train_data_path = f"{feat_root}/{dataset}/b6000/train/"
-"""
 
 crt_b = str(first_batch_size)
 

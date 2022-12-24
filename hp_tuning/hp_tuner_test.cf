@@ -1,4 +1,5 @@
 [hp_tuner.py]
+absolute_path = /home/users/efeillet/AdvisIL
 ####################### network
 backbone = resnetBasic
 width_mult = 0.5
@@ -7,14 +8,14 @@ depth_mult = 0.5
 num_samples = 3 
 ####################### dataset 
 normalization_dataset_name = imagenet_fauna
-datasets_mean_std_file_path = /home/users/efeillet/images_list_files/datasets_mean_std.txt
-train_file_path = /home/users/efeillet/images_list_files/train100/imagenet_fauna/train.lst
-test_file_path = /home/users/efeillet/images_list_files/train100/imagenet_fauna/test.lst
+datasets_mean_std_file_path = %(absolute_path)s/images_list_files/datasets_mean_std.txt
+train_file_path = %(absolute_path)s/images_list_files/train100/imagenet_fauna/train.lst
+test_file_path = %(absolute_path)s/images_list_files/train100/imagenet_fauna/test.lst
 num_classes = 3 
 ####################### training & test
 test_batch_size = 512
 num_workers = 8
 epochs = 2 
 ####################### save
-save_dir = /home/users/efeillet/expe/AdvisIL/hp_tuning
+save_dir = %(absolute_path)s/hp_tuning
 

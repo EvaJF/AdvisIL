@@ -4,9 +4,6 @@ import csv
 import numpy as np
 from multiprocessing import Pool
 
-"""
-python /home/users/apopescu/MobIL/eval_mobil_lucir.py 100 food101 50 5 /home/data/didi/ST/predictions/
-"""
 
 nb_classes = int(sys.argv[1]) #number of classes in TOTAL
 dataset = sys.argv[2]

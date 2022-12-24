@@ -3,8 +3,8 @@ import pandas as pd
 import os
 import matplotlib.pyplot as plt 
 
-
-root_dir = "/home/efeillet/Code/rfiap_plots"
+curr_dir = os.path.realpath(os.path.dirname(__file__)) # ./AdvisIL/scaling
+root_dir = os.path.join(curr_dir, "logs")
 dataset = "imagenet_random0" #"inat"
 ntot_states = 10
 ntot_classes = 100
@@ -12,8 +12,8 @@ epochs_init = 70
 epochs_incr = 70
 algo = "lucir"
 
-input_csv = "/home/efeillet/Code/rfiap_plots/results_scaling_lucir_imagenetRd0.csv" #"/home/efeillet/Code/rfiap_plots/results_MS.csv"  #"/home/eva/Documents/code/rfiap_plots/results_MS.csv"
-prefix = "wacv_random0_" # "RFIAP_"
+input_csv = os.path.join(root_dir, "results_scaling_lucir_imagenetRd0.csv") # AdvisIL/scaling/logs/results_scaling_lucir_inat.csv
+prefix = "test_random0_" 
 results_df = pd.read_csv(input_csv)
 print(results_df.columns)
 

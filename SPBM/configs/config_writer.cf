@@ -1,9 +1,10 @@
 [config_writer.py]
-yaml_folder_path = /home/users/efeillet/expe/AdvisIL/configs/spb
+absolute_path = /home/users/efeillet
+yaml_folder_path = %(absolute_path)s/expe/AdvisIL/configs/spb
 yaml_file_path = None
-output_dir = /home/data/efeillet/expe/AdvisIL/results/
-datasets_mean_std_file_path = /home/users/efeillet/images_list_files/datasets_mean_std.txt
-dataset_files_dir = /home/users/efeillet/images_list_files/train100/
+output_dir = %(absolute_path)s/AdvisIL/test/
+datasets_mean_std_file_path = %(absolute_path)s/images_list_files/datasets_mean_std.txt
+dataset_files_dir = %(absolute_path)s/images_list_files/train100/
 partition_gpu = lasti,gpup100,gpuv100,gpu
 u_dataset = None
 u_prefix = None

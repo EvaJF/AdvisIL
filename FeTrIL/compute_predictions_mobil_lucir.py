@@ -9,10 +9,6 @@ from sklearn.preprocessing import Normalizer
 from multiprocessing import Pool
 
 
-"""
-python /home/users/apopescu/MobIL/compute_predictions_mobil_lucir.py 100 food101 50 5 /home/data/didi/ST/features/ /home/data/didi/ST/svms/ /home/data/didi/ST/predictions/
-"""
-
 """ list of arguments for the script """
 nb_classes = int(sys.argv[1]) #number of classes in TOTAL
 dataset = sys.argv[2]
@@ -22,23 +18,7 @@ feat_root = sys.argv[5]
 svms_root = sys.argv[6]
 pred_root = sys.argv[7]
 s= il_states-1 #(pour Eva :) )
-#hard-coding for food-1000 and ilsvrc-500 pretrained features
-"""
-if "food1000" in feat_root:
-    test_feats_path = f"{feat_root}/{dataset}/b1000/test"
-elif "ils500" in feat_root:
-    test_feats_path = f"{feat_root}/{dataset}/b500/test"
-elif "imn1000" in feat_root:
-    test_feats_path = f"{feat_root}/{dataset}/b1000/test"
-elif "imn2000" in feat_root:
-    test_feats_path = f"{feat_root}/{dataset}/b2000/test"
-elif "imn4000" in feat_root:
-    test_feats_path = f"{feat_root}/{dataset}/b4000/test"
-elif "imn6000" in feat_root:
-    test_feats_path = f"{feat_root}/{dataset}/b6000/test"
-else:
-    test_feats_path = f"{feat_root}/{dataset}/b{first_batch_size}/test"
-"""
+
 crt_b = str(first_batch_size)
 
 test_feats_path = os.path.join(feat_root,"b"+crt_b,"test/")

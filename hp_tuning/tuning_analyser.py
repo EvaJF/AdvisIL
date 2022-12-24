@@ -3,11 +3,12 @@ import sys
 import matplotlib.pyplot as plt
 import pandas as pd
 
-root_dir = "/home/users/efeillet/expe/AdvisIL/hp_tuning"  # local : '/home/eva/Documents/code/hp_tuning'
+root_dir = os.path.realpath(os.path.dirname(__file__)) # ./AdvisIL/hp_tuning
+ 
 
 def name_parser(filename):
     name = filename.split('.csv')[0].split('_')
-    dico = {'net':name[1], 'width':name[2], 'depth':name[3]} #'width':float(name[2][1:]), 'depth':float(name[3][1:]
+    dico = {'net':name[1], 'width':name[2], 'depth':name[3]} 
     
     #marker according to architecture
     if dico['net']=='resnetBasic' : # resnet
@@ -41,7 +42,7 @@ def name_parser(filename):
     
     return dico
 
-### ALL ### Coarse + Fine
+### ALL ### Coarse + Fine exploration
 
 # filter : samples25 : coarse tuning; samples60 --> finer tuning
 csv_files = sorted([file for file in os.listdir(root_dir) if file.endswith('.csv') ]) #and "samples25" in file

@@ -3,9 +3,9 @@ expe0:
   width_mult : 0.1 # width multiplier
   depth_mult : 0.5 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -20,9 +20,9 @@ expe1:
   width_mult : 0.1 # width multiplier
   depth_mult : 2.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -36,9 +36,9 @@ expe2:
   width_mult : 0.2 # width multiplier
   depth_mult : 0.5 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -53,9 +53,9 @@ expe3:
   width_mult : 0.2 # width multiplier
   depth_mult : 2.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -69,9 +69,9 @@ expe4:
   width_mult : 0.5 # width multiplier
   depth_mult : 0.2 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -86,9 +86,9 @@ expe5:
   width_mult : 0.5 # width multiplier
   depth_mult : 0.75 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -102,9 +102,9 @@ expe6:
   width_mult : 0.5 # width multiplier
   depth_mult : 2.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -118,9 +118,9 @@ expe7:
   width_mult : 0.75 # width multiplier
   depth_mult : 0.2 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -134,9 +134,9 @@ expe8:
   width_mult : 0.75 # width multiplier
   depth_mult : 0.5 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -150,9 +150,9 @@ expe9:
   width_mult : 0.75 # width multiplier
   depth_mult : 0.75 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -166,9 +166,9 @@ expe10:
   width_mult : 0.75 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -182,9 +182,9 @@ expe11:
   width_mult : 1.0 # width multiplier
   depth_mult : 0.2 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -198,9 +198,9 @@ expe12:
   width_mult : 1.0 # width multiplier
   depth_mult : 0.5 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -214,9 +214,9 @@ expe13:
   width_mult : 1.0 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -230,9 +230,9 @@ expe14:
   width_mult : 0.1 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -246,9 +246,9 @@ expe15:
   width_mult : 0.2 # width multiplier
   depth_mult : 0.4 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -262,9 +262,9 @@ expe16:
   width_mult : 0.2 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -278,9 +278,9 @@ expe17:
   width_mult : 0.4 # width multiplier
   depth_mult : 0.4 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -294,9 +294,9 @@ expe18:
   width_mult : 0.4 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -310,9 +310,9 @@ expe19:
   width_mult : 0.6 # width multiplier
   depth_mult : 0.4 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -326,9 +326,9 @@ expe20:
   width_mult : 1.0 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -342,9 +342,9 @@ expe21:
   width_mult : 0.1 # width multiplier
   depth_mult : 0.5 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -358,9 +358,9 @@ expe22:
   width_mult : 0.1 # width multiplier
   depth_mult : 0.5 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -374,9 +374,9 @@ expe23:
   width_mult : 0.1 # width multiplier
   depth_mult : 0.75 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -390,9 +390,9 @@ expe24:
   width_mult : 0.1 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -406,9 +406,9 @@ expe25:
   width_mult : 0.2 # width multiplier
   depth_mult : 0.2 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -422,9 +422,9 @@ exp26:
   width_mult : 0.2 # width multiplier
   depth_mult : 0.5 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -438,9 +438,9 @@ expe27:
   width_mult : 0.2 # width multiplier
   depth_mult : 0.75 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -454,9 +454,9 @@ expe28:
   width_mult : 0.2 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -470,9 +470,9 @@ expe29:
   width_mult : 0.5 # width multiplier
   depth_mult : 0.75 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -486,9 +486,9 @@ expe30:
   width_mult : 0.5 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -503,9 +503,9 @@ expe31:
   width_mult : 0.75 # width multiplier
   depth_mult : 0.2 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -519,9 +519,9 @@ expe32:
   width_mult : 0.75 # width multiplier
   depth_mult : 0.5 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -535,9 +535,9 @@ expe32:
     width_mult : 0.75 # width multiplier
     depth_mult : 0.75 # depth multiplier
     normalization_dataset_name : inat # as written in the reference normalization file
-    datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-    train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-    test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+    datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+    train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+    test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
     B : 10 # number of classes in the first, non-incremental state
     P : 10 # number of classes per incremental state
     last_batch_number : 10
@@ -551,9 +551,9 @@ expe34:
   width_mult : 0.75 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -567,9 +567,9 @@ expe35:
   width_mult : 1.0 # width multiplier
   depth_mult : 0.2 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -583,9 +583,9 @@ expe36:
   width_mult : 1.0 # width multiplier
   depth_mult : 0.5 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -599,9 +599,9 @@ expe37:
   width_mult : 1.0 # width multiplier
   depth_mult : 0.75 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -616,9 +616,9 @@ expe38:
   width_mult : 1.0 # width multiplier
   depth_mult : 1.0 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -632,9 +632,9 @@ expe39:
   width_mult : 2.0 # width multiplier
   depth_mult : 0.2 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
@@ -648,9 +648,9 @@ expe40:
   width_mult : 0.2 # width multiplier
   depth_mult : 0.5 # depth multiplier
   normalization_dataset_name : inat # as written in the reference normalization file
-  datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+  datasets_mean_std_file_path : "/your/path/to/AdvisIL/images_list_files/datasets_mean_std.txt"
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  test_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst  
   B : 10 # number of classes in the first, non-incremental state
   P : 10 # number of classes per incremental state
   last_batch_number : 10
