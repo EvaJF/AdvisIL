@@ -1,9 +1,0 @@
-[inFT_siw.py]
-images_list_files_path = /home/users/efeillet/images_list_files/train100/
-ft_feat_scores_path = /home/users/efeillet/expe/results/mininat/mininat_s3/resnetBasic_w1.0_d1.0/nomemft_models/weight_bias/
-ft_weights_dir = /home/users/efeillet/expe/results/mininat/mininat_s3/resnetBasic_w1.0_d1.0/nomemft_models/weight_bias/
-K = 0
-P = 10
-S = 3
-dataset = mininat
-batch_size = 256
