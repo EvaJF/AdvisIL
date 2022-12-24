@@ -7,8 +7,8 @@ expe0:
   last_batch_number : 10 # also S, index
   num_batches : 10 # total number of batches to come
   P : 10 # number of classes per batch
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst # caution, val is in fact test here
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+  val_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst # caution, val is in fact test here
   algo_name : no_mem_ft # here memoryless fine_tuning
   IL_method : inFT_siw # combined with standardization of initial weights as in Belouadah et al. 
   num_epochs_batch1 : 100 # scratch / first batch
@@ -23,8 +23,8 @@ expe1:
   last_batch_number : 10 # also S
   num_batches : 10 # total number of batches to come
   P : 10 # number of classes per batch
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
-  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst
+  val_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst
   algo_name : no_mem_ft
   IL_method : inFT_siw
   num_epochs_batch1 : 100 # scratch / first batch
@@ -39,8 +39,8 @@ expe2:
   last_batch_number : 10 # also S
   num_batches : 10 # total number of batches to come
   P : 10 # number of classes per batch
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
-  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst
+  val_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst
   algo_name : no_mem_ft
   IL_method : inFT_siw
   num_epochs_batch1 : 100 # scratch / first batch
@@ -55,8 +55,8 @@ expe3:
   last_batch_number : 10 # also S
   num_batches : 10 # total number of batches to come
   P : 10 # number of classes per batch
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
-  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst
+  val_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst
   algo_name : no_mem_ft
   IL_method : inFT_siw
   num_epochs_batch1 : 100 # scratch / first batch
@@ -71,8 +71,8 @@ expe4:
   last_batch_number : 10 # also S
   num_batches : 10 # total number of batches to come
   P : 10 # number of classes per batch
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
-  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst
+  val_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst
   algo_name : no_mem_ft
   IL_method : inFT_siw
   num_epochs_batch1 : 100 # scratch / first batch
@@ -87,8 +87,8 @@ expe5:
   last_batch_number : 10 # also S
   num_batches : 10 # total number of batches to come
   P : 10 # number of classes per batch
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
-  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst
+  val_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst
   algo_name : no_mem_ft
   IL_method : inFT_siw
   num_epochs_batch1 : 100 # scratch / first batch
@@ -103,8 +103,8 @@ expe6:
   last_batch_number : 10 # also S
   num_batches : 10 # total number of batches to come
   P : 10 # number of classes per batch
-  train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst
-  val_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst
+  train_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/train.lst
+  val_file_path : /your/path/to/AdvisIL/images_list_files/train100/inat/test.lst
   algo_name : no_mem_ft
   IL_method : inFT_siw
   num_epochs_batch1 : 100 # scratch / first batch
