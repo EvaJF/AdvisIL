@@ -39,7 +39,6 @@ __Outline__
 
 Subfolders 
 * captions  
-* config_utils : automatically generate config files for the experiments 
 * FeTrIL : incremental learning algorithm  
 * hp_tuning : sample scripts for hyperparameter tuning 
 * imagenet : how to build custom imagenet subsets 
