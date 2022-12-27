@@ -2,6 +2,9 @@
 test/*
 *.sh
 *todo.md
+SIW/FT/configs/inat/*
+SIW/FT/configs/mininat/*
+config_utils/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
