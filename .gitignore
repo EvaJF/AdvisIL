@@ -1,7 +1,7 @@
 # folder to test the repo
 test/*
 *.sh
-./todo.txt
+./todo.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
