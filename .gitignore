@@ -5,6 +5,8 @@ test/*
 SIW/FT/configs/inat/*
 SIW/FT/configs/mininat/*
 config_utils/*
+SPBM/configs/main.cf
+SPBM/configs/main_ref.cf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
