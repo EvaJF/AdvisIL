@@ -19,40 +19,7 @@ We evaluate our method on four datasets under six incremental settings and three
 
 Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "AdvisIL - A Class-Incremental Learning Advisor", Proceedings of the Winter Conference on Applications of Computer Vision. 2023. 
 _____
-TODO list
 
-* 1 - tester pas à pas tous les scripts en suivant le tuto
-* 2 - rm --cached les fichiers inutiles 
-* 3 - supprimer tous les chemins  --> vérifier avec grep -r "efeillet" ./subfolder/ ou grep "efeillet" ./*/*.py ou .cf 
-
-* parsing : ne pas publier -->nettoyer les dossiers
-* SPBM : TODO modif learning rate cf Slack !! à faire dans les 2 repos
-* modifier tous les noms de chemins dans le tuto, e.g. in config files : root --> /AdvisIL/...
-* traquer les éléments hard codés dans les fichiers, mettre en paramètres les chemins et autres noms. --> faire un search automatique "home/data" et "home/users" et "efeillet" pour vérifier ; TO DO CHANGE PATHS and RESOURCES names in launcher files
-* Content : to update at the end
-
-* enlever les chemins en dur du tuto OK
-* ajouter dossier results avec les csv (moyennés) OK
-* reco : modifier avec code Adrian OK
-* captions folder --> image principe advisil OK
-* add a requirements file --> py37 env OK
-* image_list_files > train100 OK
-* model_utils et code backbones --> créer un dossier models OK
-* virer fichiers scaler, scaling et tutorial. OK
-* AdvisIL TODO changer nom --> configs_utils OK 
-* build_datasets : copier dossier clean local, comment obtenir les splits ImageNet + fournir les listes de fichiers dans un autre dossier image_list_files OK
-* ajouter image_list_files/train100 + ma version locale pour les subsets imagenet OK
-* deesil : vérifier contenu, lister les choses à conserver ou pas OK
-* hp_tuning OK
-* LUCIR OK
-* MobIL : maj ? --> pointer vers nouveau repo FeTrIL OK
-* scaling : OK
-* siw : OK
-* add citations for algo. OK
-
-* DSLDA : à rajouter ? demander à Adrian sa version du code DEL
-
-_____
 ## Tutorial 
 
 __Outline__
