@@ -1,8 +1,8 @@
 [RFIAP_plots.py]
 ##########################
-save_dir = /home/data/efeillet/expe/scaling
+save_dir = /your/path/to/AdvisIL/scaling
 ##########################
-input_csv = /home/data/efeillet/expe/scaling/fauna_avg_results_scaling.csv
+input_csv = /your/path/to/AdvisIL/scaling/fauna_avg_results_scaling.csv
 dataset = imagenet_fauna
 prefix = fauna_
 ##########################
