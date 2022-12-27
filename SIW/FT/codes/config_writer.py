@@ -43,8 +43,8 @@ def config_writer(expe_dic, save_root_path = save_root_dir):
         last_batch_number : 3 # also S, index
         num_batches : 3 # total number of batches to come
         P : 10 # number of classes per batch
-        train_file_path : /home/users/efeillet/images_list_files/train100/mininat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-        val_file_path : /home/users/efeillet/images_list_files/train100/mininat/test.lst # caution, val is in fact test here
+        train_file_path : /your/path/to/AdvisIL/images_list_files/train100/mininat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+        val_file_path : /your/path/to/AdvisIL/images_list_files/train100/mininat/test.lst # caution, val is in fact test here
         algo_name : no_mem_ft # here memoryless fine_tuning
         IL_method : SIW # combined with standardization of initial weights as in Belouadah et al. 
         }
@@ -58,8 +58,8 @@ def config_writer(expe_dic, save_root_path = save_root_dir):
     last_batch_number = expe_dic["last_batch_number"] # also S
     num_batches = expe_dic["num_batches"]
     P = expe_dic["P"] # number of classes per incremental batch
-    train_file_path = expe_dic["train_file_path"] # /home/users/efeillet/images_list_files/train100/mininat/train.lst
-    val_file_path = expe_dic["val_file_path"] # /home/users/efeillet/images_list_files/train100/mininat/test.lst
+    train_file_path = expe_dic["train_file_path"] # /your/path/to/AdvisIL/images_list_files/train100/mininat/train.lst
+    val_file_path = expe_dic["val_file_path"] # /your/path/to/AdvisIL/images_list_files/train100/mininat/test.lst
     algo_name = expe_dic["algo_name"] #no_mem_ft
     #IL_method = expe_dic["IL_method"] # inFT_siw
     first_epochs = expe_dic["first_epochs"] # number of epochs for training in scratch
@@ -74,14 +74,14 @@ def config_writer(expe_dic, save_root_path = save_root_dir):
     batch1_model_name = '_'.join([normalization_dataset_name, 's'+str(num_batches), model_name, "batch1"])+".pt"
     first_batch_model_load_path = os.path.join(models_save_dir, normalization_dataset_name, 
         normalization_dataset_name+'_s'+str(num_batches), model_name, "scratch", batch1_model_name)
-    # example of first_model_load_path /home/users/efeillet/expe/results/mininat/mininat_s3/resnetBasic_w1.0_d1.0/scratch/mininat_s3_resnetBasic_w1.0_d1.0_batch1.pt
+    # example of first_model_load_path /your/path/to/AdvisIL/expe/results/mininat/mininat_s3/resnetBasic_w1.0_d1.0/scratch/mininat_s3_resnetBasic_w1.0_d1.0_batch1.pt
     inc_models_load_path_prefix = os.path.join(models_save_dir, normalization_dataset_name, 
         normalization_dataset_name+'_s'+str(num_batches), model_name, algo_name+"_models", 
         '_'.join([algo_name, normalization_dataset_name, 's'+str(num_batches), model_name, "batch"]))
-    # example  of inc_models_load_path_prefix /home/users/efeillet/expe/results/mininat/mininat_s3/resnetBasic_w1.0_d1.0/nomemft_models/nomemft_mininat_s3_resnetBasic_w1.0_d1.0_batch
+    # example  of inc_models_load_path_prefix /your/path/to/AdvisIL/expe/results/mininat/mininat_s3/resnetBasic_w1.0_d1.0/nomemft_models/nomemft_mininat_s3_resnetBasic_w1.0_d1.0_batch
     ft_feat_scores_path = os.path.join(models_save_dir, normalization_dataset_name, 
         normalization_dataset_name+'_s'+str(num_batches), model_name, algo_name+"_models", "weight_bias")
-    # example of /home/users/efeillet/expe/results/mininat/mininat_s3/resnetBasic_w1.0_d1.0/nomemft_models/weight_bias/
+    # example of /your/path/to/AdvisIL/expe/results/mininat/mininat_s3/resnetBasic_w1.0_d1.0/nomemft_models/weight_bias/
     
     ### Write configs ###
     scratch =  """[scratch.py]
@@ -259,13 +259,13 @@ def launcher_writer(expe_dic, save_root_path = save_root_dir):
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
-source /home/users/efeillet/miniconda3/bin/activate
+source .../miniconda3/bin/activate
 conda activate py37
 nvidia-smi 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/scratch.py {config_path}/scratch.cf 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/no_mem_ft.py {config_path}/no_mem_ft.cf 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/features_extraction.py {config_path}/features_extraction.cf 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/inFT_siw.py {config_path}/inFT_siw.cf & wait
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/SIW/FT/codes/scratch.py {config_path}/scratch.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/SIW/FT/codes/no_mem_ft.py {config_path}/no_mem_ft.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/SIW/FT/codes/features_extraction.py {config_path}/features_extraction.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/SIW/FT/codes/inFT_siw.py {config_path}/inFT_siw.cf & wait
 """.format(error_path=error_path, log_path=log_path, partition=partition_gpu, config_path=config_path) 
      
     ### Save launcher file ###
@@ -316,7 +316,7 @@ def single_launcher(expe_list, u_dataset, u_prefix, partition = partition_gpu, o
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
-source /home/users/efeillet/miniconda3/bin/activate
+source .../miniconda3/bin/activate
 conda activate py37
 nvidia-smi 
 """.format(single_error_path=single_error_path, single_log_path=single_log_path, 
@@ -337,8 +337,8 @@ nvidia-smi
         num_batches = expe_dic["num_batches"]
         B = expe_dic["B"] # number of classes in the first batch, semi or equi
         P = expe_dic["P"] # number of classes per incremental batch
-        train_file_path = expe_dic["train_file_path"] # /home/users/efeillet/images_list_files/train100/mininat/train.lst
-        val_file_path = expe_dic["val_file_path"] # /home/users/efeillet/images_list_files/train100/mininat/test.lst
+        train_file_path = expe_dic["train_file_path"] # .../images_list_files/train100/mininat/train.lst
+        val_file_path = expe_dic["val_file_path"] # .../images_list_files/train100/mininat/test.lst
         algo_name = expe_dic["algo_name"] #no_mem_ft
         IL_method = "SIW"
         first_epochs = expe_dic["first_epochs"] # number of epochs for training in scratch
@@ -525,13 +525,13 @@ batch_size = 256""".format(dataset_files_dir=dataset_files_dir,
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
-source /home/users/efeillet/miniconda3/bin/activate
+source .../miniconda3/bin/activate
 conda activate py37
 nvidia-smi 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/scratch.py {config_path}/scratch.cf 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/no_mem_ft.py {config_path}/no_mem_ft.cf 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/features_extraction.py {config_path}/features_extraction.cf 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/inFT_siw.py {config_path}/inFT_siw.cf & wait
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/AdvisIL/SIW/FT/codes/scratch.py {config_path}/scratch.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/AdvisIL/SIW/FT/codes/no_mem_ft.py {config_path}/no_mem_ft.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/AdvisIL/SIW/FT/codes/features_extraction.py {config_path}/features_extraction.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/AdvisIL/SIW/FT/codes/inFT_siw.py {config_path}/inFT_siw.cf & wait
 """.format(error_path=error_path, log_path=log_path, partition=partition_gpu, config_path=config_path) 
         
         ### Save launcher file ###
@@ -553,13 +553,13 @@ srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-s
         
         ### Write trial specific line ###
         # append echo
-        single_launcher+="""echo EXPE /home/users/efeillet/incremental-scaler/SIW/codes/main.py {config_path}/siw.cf\n""".format(
+        single_launcher+="""echo EXPE .../AdvisIL/SIW/codes/main.py {config_path}/siw.cf\n""".format(
             config_path=config_path) 
         # append srun
-        single_launcher+="""srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/scratch.py {config_path}/scratch.cf 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/no_mem_ft.py {config_path}/no_mem_ft.cf 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/features_extraction.py {config_path}/features_extraction.cf 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/siw/FT/codes/inFT_siw.py {config_path}/inFT_siw.cf
+        single_launcher+="""srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/AdvisIL/SIW/FT/codes/scratch.py {config_path}/scratch.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/AdvisIL/SIW/FT/codes/no_mem_ft.py {config_path}/no_mem_ft.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/AdvisIL/SIW/FT/codes/features_extraction.py {config_path}/features_extraction.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/AdvisIL/SIW/FT/codes/inFT_siw.py {config_path}/inFT_siw.cf
 """.format(config_path=config_path)
     
     #print(single_launcher)

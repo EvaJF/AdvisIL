@@ -37,9 +37,9 @@ def expe_writer(expe_dic, output_dir =  output_dir):
     width_mult : 1.0 # width multiplier
     depth_mult : 1.0 # depth multiplier
     normalization_dataset_name : inat # as written in the reference normalization file
-    datasets_mean_std_file_path : "/home/users/efeillet/images_list_files/datasets_mean_std.txt"
-    train_file_path : /home/users/efeillet/images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
-    test_file_path : /home/users/efeillet/images_list_files/train100/inat/test.lst  
+    datasets_mean_std_file_path : ".../images_list_files/datasets_mean_std.txt"
+    train_file_path : .../images_list_files/train100/inat/train.lst # text file with first line = root_path, folder for dataset, trian100 means no val set
+    test_file_path : .../images_list_files/train100/inat/test.lst  
     B : 10 # number of classes in the first, non-incremental state
     P : 10 # number of classes per incremental state
     last_batch_number : 3
@@ -61,8 +61,8 @@ def expe_writer(expe_dic, output_dir =  output_dir):
     B = expe_dic["B"]
     P = expe_dic["P"] # number of classes per incremental batch
     last_batch_number = expe_dic["last_batch_number"]     
-    train_file_path = expe_dic["train_file_path"] # /home/users/efeillet/images_list_files/train100/mininat/train.lst
-    test_file_path = expe_dic["test_file_path"] # /home/users/efeillet/images_list_files/train100/mininat/test.lst
+    train_file_path = expe_dic["train_file_path"] # /images_list_files/train100/mininat/train.lst
+    test_file_path = expe_dic["test_file_path"] # /images_list_files/train100/mininat/test.lst
     first_epochs = expe_dic["first_epochs"]
     subsequent_epochs = expe_dic["subsequent_epochs"]
     IL_method = expe_dic["IL_method"]
@@ -193,10 +193,10 @@ exists_val = False""".format(backbone=backbone, width_mult=width_mult, depth_mul
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
-source /home/users/efeillet/miniconda3/bin/activate
+source .../miniconda3/bin/activate
 conda activate py37
 nvidia-smi 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/LUCIR/codes/main.py {config_path}/lucir.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python your/path/to/AdvisIL/LUCIR/codes/main.py {config_path}/lucir.cf 
 """.format(error_path=error_path, log_path=log_path, partition=partition_gpu, config_path=config_path) 
      
     ### Save launcher file ###
@@ -248,7 +248,7 @@ def single_launcher(expe_list, u_dataset, u_prefix, partition = partition_gpu, o
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
-source /home/users/efeillet/miniconda3/bin/activate
+source .../miniconda3/bin/activate
 conda activate py37
 nvidia-smi 
 """.format(single_error_path=single_error_path, single_log_path=single_log_path, 
@@ -270,8 +270,8 @@ nvidia-smi
         B = expe_dic["B"]
         P = expe_dic["P"] # number of classes per incremental batch
         last_batch_number = expe_dic["last_batch_number"]     
-        train_file_path = expe_dic["train_file_path"] # /home/users/efeillet/images_list_files/train100/mininat/train.lst
-        test_file_path = expe_dic["test_file_path"] # /home/users/efeillet/images_list_files/train100/mininat/test.lst
+        train_file_path = expe_dic["train_file_path"] # /images_list_files/train100/mininat/train.lst
+        test_file_path = expe_dic["test_file_path"] # /images_list_files/train100/mininat/test.lst
         first_epochs = expe_dic["first_epochs"]
         subsequent_epochs = expe_dic["subsequent_epochs"]
         IL_method = expe_dic["IL_method"]
@@ -397,10 +397,10 @@ exists_val = False""".format(backbone=backbone, width_mult=width_mult, depth_mul
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
-source /home/users/efeillet/miniconda3/bin/activate
+source .../miniconda3/bin/activate
 conda activate py37
 nvidia-smi 
-srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/LUCIR/codes/main.py {config_path}/lucir.cf 
+srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/AdvisIL/LUCIR/codes/main.py {config_path}/lucir.cf 
 """.format(error_path=error_path, log_path=log_path, partition=partition_gpu, config_path=config_path) 
         
         ### Save launcher file ###
@@ -422,10 +422,10 @@ srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-s
         
         ### Write trial specific line ###
         # append echo
-        single_launcher+="""echo EXPE /home/users/efeillet/incremental-scaler/LUCIR/codes/main.py {config_path}/lucir.cf\n""".format(
+        single_launcher+="""echo EXPE /your/path/to/AdvisIL/LUCIR/codes/main.py {config_path}/lucir.cf\n""".format(
             config_path=config_path) 
         # append srun
-        single_launcher+="""srun --nodes=1 --ntasks=1 --gres=gpu:1 python /home/users/efeillet/incremental-scaler/LUCIR/codes/main.py {config_path}/lucir.cf\n""".format(
+        single_launcher+="""srun --nodes=1 --ntasks=1 --gres=gpu:1 python /your/path/to/AdvisIL/LUCIR/codes/main.py {config_path}/lucir.cf\n""".format(
             config_path=config_path)
     
     #print(single_launcher)

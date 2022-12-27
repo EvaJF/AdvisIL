@@ -29,12 +29,12 @@ var_algo = cp['algo']
 
 ### Select log files to read results from ###
 # method 1 : when log files are in subfolders corresponding to individual experiments
-# ex : rootdir = /home/users/efeillet/expe/results/inat/inat_s10_k0
+# ex : rootdir = .../expe/results/inat/inat_s10_k0
 #expe_list = [e for e in os.listdir(root_dir) if  e.startswith("resnet") or e.startswith("mobilenet") or e.startswith("shufflenet")] 
 #log_list = [(expe, os.path.join(root_dir, expe, "LUCIR", 'logs', 'log.log')) for expe in expe_list]
 print(os.listdir(root_dir))
 # method 2 : when several experiments are gathered in a singl log files, and several log files must be read too
-# ex : rootdir = /home/users/efeillet/expe/scaling/imagenet_random_0/imagenet_random0_s10equi
+# ex : rootdir = .../expe/scaling/imagenet_random_0/imagenet_random0_s10equi
 log_list = [os.path.join(root_dir, file)
          for file in os.listdir(root_dir) if file.endswith(".log") and file.startswith("log")]
 
