@@ -331,4 +331,5 @@ As AdvisIL is thought as a collaborative tool, don't hesitate to contribute to t
 - reporting issues
 - adding algorithms, backbones and datasets
 - adding experimental results.
+
 Thanks for your contribution !
