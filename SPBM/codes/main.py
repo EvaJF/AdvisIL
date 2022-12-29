@@ -342,7 +342,7 @@ with warnings.catch_warnings(record=True) as warn_list:
             else:
                 train_batch_size = subsequent_train_batch_size
                 epochs = subsequent_epochs
-                #base_lr = subsequent_base_lr
+                base_lr = subsequent_base_lr_features_extractor
                 custom_weight_decay = subsequent_custom_weight_decay
                 lr_factor = subsequent_lr_factor
                 lr_strat = subsequent_lr_strat

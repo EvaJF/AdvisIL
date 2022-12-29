@@ -231,8 +231,6 @@ _Useful tip: For convenience, we reuse the first state obtained by running LUCIR
 
 #### b. SPB-M
 
-TODO modif learning rate cf Slack !!
-
 We use the SPB-M version, which uses a data augmentation procedure based on image rotations. As no official code with released for this method, we based our implementation on LUCIR’s implementation, with a modified loss function and SPB-M’s data augmentation procedure. Unfortunately, our implementation does not reac the same accuracy as in the original paper. Contributions are welcome to improve this. 
 
 Example code for launching SPB-M.
