@@ -1,5 +1,5 @@
 [main.py] 
-absolute_path = /home/users/efeillet
+absolute_path = /your/absolute/path/to
 ############################### ARCHITECTURE
 backbone = resnetBasic
 width_mult = 1.0

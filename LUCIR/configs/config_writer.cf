@@ -1,5 +1,5 @@
 [config_writer.py]
-absolute_path = /home/users/efeillet
+absolute_path = /your/absolute/path/to
 yaml_folder_path = None
 yaml_file_path = %(absolute_path)s/scaling/yaml_files/imagenet_fauna_lucir_equi_s10_scaling.yaml
 output_dir = %(absolute_path)s/test

@@ -1,5 +1,5 @@
 [hp_tuner.py]
-absolute_path = /home/users/efeillet/AdvisIL
+absolute_path = /your/absolute/path/to/AdvisIL
 ####################### network
 backbone = resnetBasic
 width_mult = 0.5

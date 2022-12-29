@@ -1,5 +1,5 @@
 [result_analyser_concat.py]
-absolute_path = /home/users/efeillet
+absolute_path = /your/absolute/path/to
 root_dir = %(absolute_path)s/scaling/inat/inat_lucir_equi_s10/unique/LUCIR/logs
 dataset = inat
 ntot_states = 10

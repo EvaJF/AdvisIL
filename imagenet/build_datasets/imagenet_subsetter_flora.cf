@@ -1,6 +1,6 @@
 [imagenet_subsetter.py]
-absolute_path = /home/users/efeillet/AdvisIL
-absolute_path_images = /home/data/efeillet
+absolute_path = /your/absolute/path/to/AdvisIL
+absolute_path_images = /your/absolute/path/to/datadirs
 ################################ input
 input_path = %(absolute_path)s/imagenet/class_lists/flora_over_600.txt  
 path_to_tars = /home/data/dataset/ImageNet/tars  
