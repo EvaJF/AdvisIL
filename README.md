@@ -15,9 +15,17 @@ We evaluate our method on four datasets under six incremental settings and three
   title="AdvisIL's principle"
   style="display: inline-block; margin: 0 auto; max-width: 250px">
 
-**How to cite**
+If you find this code useful for your research, please cite our paper:
 
-Feillet Eva, Petit Gégoire, Popescu Adrian, Reyboz Marina, Hudelot Céline, "AdvisIL - A Class-Incremental Learning Advisor", Proceedings of the Winter Conference on Applications of Computer Vision. 2023. 
+```BibTeX
+@InProceedings{Feillet_2023_WACV,
+    author    = {Feillet, Eva and Petit, Gr\'egoire and Popescu, Adrian and Reyboz, Marina and Hudelot, C\'eline},
+    title     = {AdvisIL - A Class-Incremental Learning Advisor},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {January},
+    year      = {2023},
+    pages     = {2400-2409}
+} 
 _____
 
 ## Tutorial 
